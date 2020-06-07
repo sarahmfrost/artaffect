@@ -1,1 +1,4 @@
 # artitude
+
+
+Artitude is an interactive web application that explores a novel art experience. In contrast with presentations that organize art by genre, medium, or style, Artitude lets users visualize a database of visual art by its affective/emotional content.  We present three interaction methods that provide various amounts of guidance through the dataset. Our sliders section allows users to explore the database by manipulating five sliders that correspond to five affect qualities (love, positive emotion, anger, anxiety, sadness). The carousel section provides a guided look through a subset of pieces with the highest emotional value. Finally, our gradient section gives the user the ability to explore the affect space spanned by narrator-selected pieces of visual art via incremental movements. These three methods combine to serve as a playful exploration mechanic that presents art in a whimsical and unexpected way. 
