@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ARTITUDE.TECH </title>
+
+  <meta charset="utf-8"/>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+ <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+ <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+<link rel="shortcut icon" type="image/png" href="{{url_for('static', filename='imgs/palette.png')}}"/>
+
+<script src="{{url_for('static', filename='js/functions.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"  crossorigin="anonymous"></script>
+
+   </head>
+
+
+
+<body>
+<header>ARTITUDE</header>
+
+
+<div id="about-text">
+<!-- <a href="/static/html/about.html">About this project</a> -->
+
+<a href="/static/html/gradient.html">Gradient</a>
+<br><br><br><br>
+<a href="/static/html/carousel2.html">Carousel</a>
+
+</div>
+
+<br>
+<br>
+<h2>Sliders</h2>
+
+  <br>
+  <br>
+  <br>
+      <div id="artFeatures" style="color:#FFFFFF";> features of selected art are:
+      </div>
+
+
+      <div id="sliderValues" style="color:#FFFFFF";> slider values are
+      </div>
+
+
+      <div id="PaintingName" style="color:#FFFFFF";> result image is
+      </div>
+
+
+<div class='container'>
+
+<div id="input-text">
+Choose your affect vectors:
+</div>
+
+
+<div id = "resultDivText">
+Your Artitude:
+</div>
+
+</div>
+
+<div id='parent_div'>
+<!-- <div id ='child_div'>
+ -->
+<div id="breakup"> </div>
+
+
+<!-- Pos: 89.55 Anx: 58.82 Ang: 32.65 Sad: 72.22 Soc: 66.67 Drives: 74.19
+ -->
+<div class="slidecontainer">
+  <p style="color:white"> Anger:</p>
+  <input id="angerValue" type="range" min="0" max="33" value="0" class="slider">
+  <p style="color:white"> Anxiety:</p>
+  <input id="anxietyValue" type="range" min="0" max="59" value="0" class="slider">
+  <p style="color:white"> Positive Emotion:</p>
+  <input id="positiveValue" type="range" min="0" max="90" value="0" class="slider">
+  <p style="color:white"> Sadness:</p>
+  <input id="sadnessValue" type="range" min="0" max="73" value="0" class="slider">
+   <p style="color:white"> Love: </p>
+  <input id="affiliationValue" type="range" min="0" max="51" value="0" class="slider">
+
+<!--
+  <p style="color:white"> Social: </p>
+  <input id="socialValue" type="range" min="0" max="67" value="10" class="slider">
+<p style="color:white"> Drives: </p>
+  <input id="drivesValue" type="range" min="0" max="75" value="10" class="slider"> -->
+</div>
+
+
+<div id="breakup"> </div>
+<!-- ResultDiv is filled with result image -->
+<div id="resultDiv"></div>
+<div id="breakup"> </div>
+</div>
+
+
+
+
+
+<!-- </div>
+ -->
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    </body>
+</html>

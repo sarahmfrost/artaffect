@@ -1,0 +1,156 @@
+body {
+    background-color: #000000;
+    font-size: 20px;
+}
+
+
+header {
+    text-align: center;
+    font-family: Didot, "Didot LT STD";
+    font-size: 55px;
+    color: white;
+    padding: 7px;
+    border: 2px solid white;
+    border-radius: 6px;
+    width: 330px;
+    margin: auto;
+    margin-top: 20px;
+
+
+}
+
+h2 {
+  text-align: center;
+  font-family: Didot, "Didot LT STD";
+  font-size: 40px;
+  color: white;
+}
+
+
+#artFeatures, #sliderValues, #PaintingName {
+  text-align: center;
+}
+
+/*#sliderValues {
+
+}
+
+
+#PaintingName {
+
+}*/
+
+
+.container {
+    padding-top: 30px;
+    margin: auto;
+    padding-bottom: 20px;
+
+}
+
+#parent_div {
+  display: table;
+  width: 100%;
+  height: 700px;
+  border-spacing: 0;
+  border-spacing: none;
+}
+
+/*#child_div {
+  display: table-row;
+}*/
+
+#about-text {
+    float:right;
+    font-family: Didot, "Didot LT STD";
+    color: white;
+    font-size: 25px;
+    padding-right: 20px;
+}
+
+#input-text {
+    float:left;
+    font-family: Didot, "Didot LT STD";
+    color: white;
+    font-size: 35px;
+    padding-bottom: 100px;
+}
+
+a {
+  color: #ffffff;
+}
+
+#resultDivText {
+    float:right;
+    font-family: Didot, "Didot LT STD";
+    color: white;
+    font-size: 35px;
+    width: 500px;
+    height: 100px;
+    padding-right: 50px;
+}
+
+
+#resultDiv {
+/*    float:right;
+    padding-right: 300px;
+    width:600px;
+    height:600px;*/
+    width: 35%;
+    display: table-cell;
+
+}
+
+#breakup {
+    width: 10%;
+    display: table-cell;
+}
+
+/* slider info */
+.slidecontainer {
+  padding: 0;
+  width: 35%;
+  display: table-cell;
+  vertical-align: middle;
+ /* width: 280px;*/
+  border: 3px solid white;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 60%; /* Full-width */
+  height: 15px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  margin-bottom: 30px
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #FACADE; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #FACADE; /* Pink background */
+  cursor: pointer; /* Cursor on hover */
+}

@@ -1,0 +1,108 @@
+/*carousel.css
+*/
+
+body,div,img,p,table,tr,td,a,h1,h2,h3,h4,ul,li,em,span {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    font:.9em Arial,Helvetica,sans-serif;
+    color:#343434;
+    background:#000;
+    margin:0;
+    padding:0;
+}
+
+h2{
+  color:white;
+  text-align:center;
+  font-size:1.5em;
+  margin:10px 0;
+}
+
+p {
+    letter-spacing:.5px;
+    padding:16px 0;
+}
+
+.row {
+    width:100%;
+    margin:0 auto;
+    display:block;
+    position:relative;
+}
+
+.carouselwrap {
+    position:relative;
+    width:100%;
+    max-width:960px;
+    overflow:hidden;
+    margin:0 auto;
+}
+
+.carousel {
+    position:relative;
+    overflow:hidden;
+    white-space:nowrap;
+   font-size: 0;
+}
+
+.carousel .item {
+    display:inline-block;
+    text-align:center;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    vertical-align:top;
+}
+
+.carousel .item img {
+    opacity:.6;
+    max-height:350px;
+}
+
+.carousel .item .mainimg {
+    opacity:1;
+}
+
+.ic_title {
+    width:100%;
+    background:#F8F8F8;
+    text-align:center;
+}
+
+.ic_title p {
+    padding:8px 0;
+}
+
+.back_btn {
+    padding:20px;
+    position:absolute;
+    left:10px;
+    z-index:50000000;
+    top:40%;
+    cursor:pointer
+}
+
+.next_btn {
+    padding:20px;
+    position:absolute;
+    right:10px;
+    z-index:50000000;
+    top:40%;
+    cursor:pointer
+}
+
+.no_select {
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    background-color: rgb(255, 255, 255);
+    background-color:rgba(255,255,255,0.8);
+}

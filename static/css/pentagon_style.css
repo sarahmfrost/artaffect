@@ -1,0 +1,114 @@
+/*carousel.css
+*/
+
+
+
+body {
+  background-color: #facade;
+  color: black;
+  font-size: 40px;
+  text-align: center;
+}
+
+.myPentagon {
+  height: 400px;
+  width: 900px;
+  text-align: center;
+}
+
+#myCanvas {
+  height: 600px;
+  display: inline-block;
+  position: relative;
+  z-index: -30;
+
+}
+
+
+.grid-container
+{
+  display: grid;
+  grid-template-columns: 500px 700px 500px;
+  padding: 50px;
+  clear: both;
+  width: 1200px;
+  margin-left: 200px;
+}
+
+.grid-item
+{
+  /*border: 1px solid rgba(0, 0, 0, 1.0);*/
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-item img
+{
+    height: 350px;
+}
+
+#mbutton2, #mbutton4 {
+  text-align: right;
+  position: relative;
+  z-index:30;
+}
+
+#mbutton3, #mbutton5 {
+  text-align: left;
+}
+
+
+img {
+  position: absolute;
+  left: 1000px;
+  top: 450px;
+}
+
+
+#randomButtonDiv {
+  text-align: center;
+}
+
+#randomButton {
+    font-family: Didot, "Didot LT STD" !important;
+    color: white;
+    background: transparent;
+    border: 4px solid #C12957;
+    border-radius: 6px;
+    font-size: 50px;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+/*    margin-left: 375px;
+    float: left;*/
+
+}
+
+#randomButton:hover {
+      background-color: #C12957;
+      color: white;
+}
+
+
+button {
+    font-family: Didot, "Didot LT STD" !important;
+    color: white;
+    background: transparent;
+    border: 4px solid #C12957;
+    border-radius: 6px;
+    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button:hover {
+      background-color: #C12957;
+      color: white;
+}
+
+
+#spacer {
+  border: 1px solid rgba(0, 0, 0, 0);
+
+}
