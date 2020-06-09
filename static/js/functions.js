@@ -1,7 +1,4 @@
 
-//window.alert("This project is in development");
-
-
 //const csvPath = "static/data/image_path.csv"
 //var allFilePaths = []
 
@@ -52,11 +49,9 @@ function saveAffects(){
 
 var anger = document.getElementById("angerValue");
 var anxiety = document.getElementById("anxietyValue");
-//var social = document.getElementById("socialValue");
 var positiveEmotion = document.getElementById("positiveValue");
 var affiliation = document.getElementById('affiliationValue')
 var sad = document.getElementById("sadnessValue");
-//var drives = document.getElementById("drivesValue");
 
 var pred = {"positive": Number(positiveEmotion.value),
   "anxiety": Number(anxiety.value),
@@ -83,39 +78,29 @@ $(document).ready(function()
         contentType: "application/json",
         dataType: 'json',
         success:function( data )
-        {
-            var dataTosplit = data;
-            var res = dataTosplit.split(";");
-            var data = res[0];
-            var features = res[1];
-            console.log("new data is" + data)
-            console.log("new features is" + features)
+            {
+                var dataTosplit = data;
+                var res = dataTosplit.split(";");
+                var data = res[0];
+                var features = res[1];
+                console.log("new data is" + data)
+                console.log("new features is" + features)
 
-            document.getElementById("resultDiv").innerHTML = "";
-            //console.log("data is" + data)
-            var img = document.createElement("img");
-            img.src = "static/imgs/images/" + data;
-            img.id = "picture";
-            img.height = "600";
-            // take image width or height, constrain larger to 600 px
-/*            if (img.width > img.height){
-                img.width = "600";
-            }
-            else {
+                document.getElementById("resultDiv").innerHTML = "";
+                var img = document.createElement("img");
+                img.src = "static/imgs/images/" + data;
+                img.id = "picture";
                 img.height = "600";
-            }*/
 
-            var foo = document.getElementById("resultDiv");
-            foo.appendChild(img);
-            console.log("img src is" + img.src)
+                var foo = document.getElementById("resultDiv");
+                foo.appendChild(img);
+                console.log("img src is" + img.src)
 
-        $('#PaintingName').html("result image is " + data)
-        $('#artFeatures').html("features of selected art are: " + features)
-        $('#sliderValues').html("slider values are: " + JSON.stringify (pred))
+            $('#PaintingName').html("result image is " + data)
+            $('#artFeatures').html("features of selected art are: " + features)
+            $('#sliderValues').html("slider values are: " + JSON.stringify (pred))
 
-        }
+            }
+        })
     })
-})
-
-
 })

@@ -51,8 +51,9 @@ function LIWC_CSVToArray(path)
 var liwc_filePaths = LIWC_CSVToArray(liwc_csv);
 
 
-$(document).ready(function() {
 
+
+$(document).ready(function() {
 
     //Takes a divID, and puts a random image in that div
     function getBeginningImage(divID){
@@ -61,6 +62,10 @@ $(document).ready(function() {
 
         var randomNumber = Math.floor(Math.random() * filePaths.length);
         randomImage = filePaths[randomNumber];
+
+        //var notRandom1 = 'hip-hip-hurrah-1888.jpg';
+        //var notRandom2 = 'king-lear-weeping-over-the-dead-body-of-cordelia-1788.jpg';
+
         console.log("randomImage is", randomImage);
 
 
@@ -73,30 +78,25 @@ $(document).ready(function() {
 
             $(divID).append(myImage);
         }
-        else{
+        else {
             var butName = divID + 'but';
             $(butName).empty();
             var x = document.createElement('img');
-            //var x = document.createElement("INPUT");
-            //x.setAttribute("type", "image");
             x.src = '../imgs/images/' + randomImage;
 
             var divName = divID.replace("#","");
             x.setAttribute('id', divName+ 'img');
 
             $(butName).prepend(x);
-            //console.log("please has been inputted");
-            //$(divID).append(x);
 
             for (i=0; i < liwc_filePaths.length; i++){
                 if (liwc_filePaths[i][0] == randomImage){
-                //if (('../imgs/images/' + liwc_filePaths[i][0]) == $('#anchor2img').attr('src')){
                     var affVec = liwc_filePaths[i].slice(1, 6);
                     console.log(randomImage + affVec);
                 };
             };
         }
-    return affVec;
+        return affVec;
     };
 
     getBeginningImage('#target');
@@ -120,8 +120,6 @@ $(document).ready(function() {
         marginL = 0;
     });
 
-//subtract one array from another, and divide by 10, add to each step
-//run lookup function and return closest image
 
 /*
 For C0, C1 either the affect vector or the position vector of the anchor images
@@ -160,7 +158,6 @@ C0 = left
         }
         console.log('c1num', c1_num);
 
-    // the first step will be c0_num + c1_num,
         for(var i=0; i<5; i++) {
             imgInt = c0_num[i] + c1_num[i];
             c0plusc1.push(imgInt);

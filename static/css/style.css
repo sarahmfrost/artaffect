@@ -27,18 +27,25 @@ h2 {
 }
 
 
+#navLink {
+  font-family: Didot, "Didot LT STD";
+  color:white;
+  font-size: 40px;
+  width: 140px;
+  text-align: center;
+  float: right;
+  margin-right: 80px;
+  margin-left: 50px;
+}
+
+#navLink:hover {
+  color: white;
+}
+
+
 #artFeatures, #sliderValues, #PaintingName {
   text-align: center;
 }
-
-/*#sliderValues {
-
-}
-
-
-#PaintingName {
-
-}*/
 
 
 .container {
@@ -56,16 +63,14 @@ h2 {
   border-spacing: none;
 }
 
-/*#child_div {
-  display: table-row;
-}*/
 
 #about-text {
     float:right;
     font-family: Didot, "Didot LT STD";
     color: white;
-    font-size: 25px;
-    padding-right: 20px;
+    font-size: 50px;
+    padding-right: 200px;
+    padding-left: 200px;
 }
 
 #input-text {
@@ -92,10 +97,6 @@ a {
 
 
 #resultDiv {
-/*    float:right;
-    padding-right: 300px;
-    width:600px;
-    height:600px;*/
     width: 35%;
     display: table-cell;
 

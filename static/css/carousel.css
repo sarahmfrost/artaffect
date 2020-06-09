@@ -1,108 +1,114 @@
 /*carousel.css
 */
 
-body,div,img,p,table,tr,td,a,h1,h2,h3,h4,ul,li,em,span {
-    margin:0;
-    padding:0;
-    border:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+html, body{
+  background-color: #000000
 }
-
-body {
-    font:.9em Arial,Helvetica,sans-serif;
-    color:#343434;
-    background:#000;
-    margin:0;
-    padding:0;
-}
-
-h2{
-  color:white;
+.wrapper{
+  width:100%;
+  padding-top: 20px;
   text-align:center;
-  font-size:1.5em;
-  margin:10px 0;
+}
+h2{
+  font-family:sans-serif;
+  color:#fff;
+  display: inline-block;
+}
+.carousel{
+  width:80%;
+  margin:0px auto;
+}
+.slick-slide{
+  margin:10px;
+  outline: none;
+}
+.slick-slide img{
+/*  width:75%;
+  border: 2px solid #fff;*/
+  max-height:450px;
 }
 
-p {
-    letter-spacing:.5px;
-    padding:16px 0;
+.slick-next {
+  right: -45px;
 }
 
-.row {
-    width:100%;
-    margin:0 auto;
-    display:block;
-    position:relative;
+.slick-next:before {
+  font-size: 40px;
 }
 
-.carouselwrap {
-    position:relative;
-    width:100%;
-    max-width:960px;
-    overflow:hidden;
-    margin:0 auto;
+.slick-prev {
+    left: -65px;
+
 }
 
-.carousel {
-    position:relative;
-    overflow:hidden;
-    white-space:nowrap;
-   font-size: 0;
+.slick-prev:before {
+  font-size: 40px;
 }
 
-.carousel .item {
-    display:inline-block;
-    text-align:center;
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    vertical-align:top;
+
+button{
+  background: #cfcfcf;
+  font-family: futura;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  margin: 15px;
 }
 
-.carousel .item img {
-    opacity:.6;
-    max-height:350px;
+button:hover{
+  background: #6e6e6e;
 }
 
-.carousel .item .mainimg {
-    opacity:1;
+button a{
+  color: #303030;
 }
 
-.ic_title {
-    width:100%;
-    background:#F8F8F8;
-    text-align:center;
+button a:hover{
+  color: #303030;
 }
 
-.ic_title p {
-    padding:8px 0;
+a{
+  color: #303030;
+  text-decoration: none;
 }
 
-.back_btn {
-    padding:20px;
-    position:absolute;
-    left:10px;
-    z-index:50000000;
-    top:40%;
-    cursor:pointer
+a:hover{
+  color: #6e6e6e;
+  text-decoration: none;
 }
 
-.next_btn {
-    padding:20px;
-    position:absolute;
-    right:10px;
-    z-index:50000000;
-    top:40%;
-    cursor:pointer
+.dropdown{
+  position: relative;
+  display: inline-block;
 }
 
-.no_select {
-    -moz-user-select:none;
-    -webkit-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
-    background-color: rgb(255, 255, 255);
-    background-color:rgba(255,255,255,0.8);
+.dropdownContent{
+  text-align: center;
+  font-size: 14px;
+  left:0;
+  right:auto;
+  margin-left:50px;
+  padding: 12px;
+  bottom: 0;
+  display: none;
+  position: absolute;
+  min-width: 180px;
+  background-color: #e6e6e6;
+  border-radius: 10%;
+
+}
+
+.dropdown:hover .dropdownContent{
+  display: block;
+}
+
+
+/* Button next to title for info */
+
+.title .dropdown:hover .dropdownContent{
+  overflow: scroll;
+  padding: 15px;
+  left: 0;
+  min-width: 300px;
 }
