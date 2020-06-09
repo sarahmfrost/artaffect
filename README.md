@@ -19,7 +19,5 @@ Check out our [paper](https://github.com/sarahmfrost/artitude/blob/master/Frost_
 ![gradient_image](/README_IMAGES/gradient.png)
 
 
-<img src="/README_IMAGES/sliders_anger.png" alt="sliders_anger" width="200"/>
-
-
-![sliders_sadness](/README_IMAGES/sliders_sadness.png)
+<img src="/README_IMAGES/sliders_anger.png" alt="sliders_anger" width="400"/>
+<img src="/README_IMAGES/sliders_sadness.png" alt="sliders_sadness" width="400"/>
