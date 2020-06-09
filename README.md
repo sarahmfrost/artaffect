@@ -13,12 +13,12 @@ This project is under active development at <http://www.artitude.tech>
 Check out our [paper](https://github.com/sarahmfrost/artitude/blob/master/Frost_Artitude_2020.pdf)
 
 
-![Teaser 1](/README_IMAGES/Teaser.png)
-
-![Teaser 2](https://github.com/sarahmfrost/artitude/blob/master/README_IMAGES/Teaser.png)
+![carousel_image](/README_IMAGES/Teaser.png)
 
 
-https://github.com/sarahmfrost/artitude/blob/master/README_IMAGES/Teaser.png
-https://github.com/sarahmfrost/artitude/blob/master/README_IMAGES/gradient.png
-https://github.com/sarahmfrost/artitude/blob/master/README_IMAGES/sliders_anger.png
-https://github.com/sarahmfrost/artitude/blob/master/README_IMAGES/sliders_sadness.png
+![gradient_image](/README_IMAGES/gradient.png)
+
+
+![sliders_anger](/README_IMAGES/sliders_anger.png)
+
+![sliders_sadness](/README_IMAGES/sliders_sadness.png)
