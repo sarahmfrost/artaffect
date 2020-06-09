@@ -10,4 +10,4 @@ Artitude is an interactive web application that creates a novel engagement with 
 This project is under active development at <http://www.artitude.tech>
 
 
-Check out our [paper]: https://github.com/sarahmfrost/artitude/blob/master/Frost_Artitude_2020.pdf
+Check out our [paper](https://github.com/sarahmfrost/artitude/blob/master/Frost_Artitude_2020.pdf)
