@@ -23,4 +23,4 @@ Check out our [paper](https://github.com/sarahmfrost/artitude/blob/master/Frost_
 
 ### Two screenshots of result images from our *Slider* interaction method:
 
-<img src="/README_IMAGES/sliders_anger.png" alt="sliders_anger" width="400"/> <img src="/README_IMAGES/sliders_sadness.png" alt="sliders_sadness" width="400"/>
+<img src="/README_IMAGES/sliders_anger.png" alt="sliders_anger" width="450"/> <img src="/README_IMAGES/sliders_sadness.png" alt="sliders_sadness" width="450"/>
