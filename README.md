@@ -13,10 +13,14 @@ This project is under active development at <http://www.artitude.tech>
 Check out our [paper](https://github.com/sarahmfrost/artitude/blob/master/Frost_Artitude_2020.pdf)
 
 
+### A screenshot of our carousels for each of our five emotions:
+
 ![carousel_image](/README_IMAGES/Teaser.png)
 
+### A compilation of eight screenshots from the gradient interaction method:
 
 ![gradient_image](/README_IMAGES/gradient.png)
 
+### Two screenshots of result images from our Slider interaction method:
 
 <img src="/README_IMAGES/sliders_anger.png" alt="sliders_anger" width="400"/> <img src="/README_IMAGES/sliders_sadness.png" alt="sliders_sadness" width="400"/>
