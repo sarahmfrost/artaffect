@@ -34,7 +34,7 @@ allFilePaths = readCSVToArray(csvPath, '\r')
 ranNum = Math.floor(Math.random() * allFilePaths.length);
 
     var img = document.createElement("img");
-    img.src = "static/imgs/images/" + allFilePaths[ranNum];
+    img.src = "../ximgs/images/" + allFilePaths[ranNum];
     img.id = "picture";
 
 console.log(allFilePaths[ranNum])
@@ -88,7 +88,7 @@ $(document).ready(function()
 
                 document.getElementById("resultDiv").innerHTML = "";
                 var img = document.createElement("img");
-                img.src = "static/imgs/images/" + data;
+                img.src = "../imgs/images/" + data;
                 img.id = "picture";
                 img.height = "600";
 

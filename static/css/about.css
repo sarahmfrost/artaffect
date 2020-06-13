@@ -1,0 +1,42 @@
+/* For welcome page */
+
+.method_info {
+  display: table;
+  width: 100%;
+  height: 300px;
+  border-spacing: 100px;
+  border-collapse: separate;
+  padding: 12px 12px 12px 12px;
+}
+
+#slider-info, #carousel-info, #gradient-info {
+  width: 33%;
+  font-size: 40px;
+  color: white;
+  display: table-cell;
+  border: 2px solid white;
+  border-radius: 26px;
+  text-align: center;
+  font-family: Didot, "Didot LT STD";
+  padding: 17px;
+
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+#welcome{
+font-family: 'MuseoModerno', cursive;
+color: #c9c0bb;
+/*font-size: 375px;*/
+font-size: 15vw;
+display: flex;
+  align-items: center;
+  justify-content: center;
+text-align: center;
+/*width: 100%;
+height:auto;*/
+}

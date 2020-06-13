@@ -15,90 +15,73 @@
 
  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
 
+ <link href="{{url_for('static', filename='css/about.css')}}" rel="stylesheet">
+
+
+
 <link rel="shortcut icon" type="image/png" href="{{url_for('static', filename='imgs/palette.png')}}"/>
 
 <script src="{{url_for('static', filename='js/functions.js')}}"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"  crossorigin="anonymous"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
+
+<!--
+<style>
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;500&display=swap');
+</style> -->
+
+
    </head>
 
 
 
 <body>
-<header>ARTITUDE</header>
+    <header>ARTITUDE</header>
 
     <h2>
-    <a id="navLink" href="/static/html/about.html">About</a>
+    <a id="navLink" href="/static/html/sliders.html">Sliders</a>
     <a id="navLink" href="../static/html/carousel.html">Carousel  </a>
     <a id="navLink" href="../static/html/gradient.html">Gradient  </a>
     </h2>
 
+        <br> <br> <br>
 
+        <div id="welcome"> WELCOME  </div>
 
+        <div id="about-text">
 
-<br>
-<br>
-<h2>Sliders</h2>
+            Artitude is an interactive web application that creates a novel engagement with art collections. In contrast with presentations that organize art by genre, medium, or style, Artitude lets users visually organize a database of visual art in terms of a series of affect parameters that describe the emotional content of the artworks. We present Artitude’s three main interaction methods, each of which provides a different type of guided navigation through the dataset. Together, these three methods act as a playful exploration mechanic that presents art in unexpected ways, showing serendipitous connections between diverse artworks within the collection. These serendipitous connections can increase a user’s feelings of engagement and excitement.
+            <br><br>
 
-  <br>
-  <br>
-  <br>
-      <div id="artFeatures" style="color:#FFFFFF";> features of selected art are:
-      </div>
+            Check out our code here: <a href="https://github.com/sarahmfrost/artitude">github.com/sarahmfrost/artitude</a>
+            <br><br>
+        </div>
 
+        <div class='method_info'>
+          <div id="slider-info">
+            Our Sliders interface encourages users to explore the database by manipulating five sliders that correspond to five affect qualities (love, positive emotion, anger, anxiety, sadness).
+            <br><br>
+            <img src="../static/imgs/about_page/sliders.png"/>
+            <br><br>
+          </div>
 
-      <div id="sliderValues" style="color:#FFFFFF";> slider values are
-      </div>
+          <div id="carousel-info">
+            The Carousel interface provides a tour through a subset of art pieces with the highest emotional valence along one affect vector.
+            <br><br>
+            <img src="../static/imgs/about_page/carousel.png"/>
+            <br><br>
+          </div>
 
-
-      <div id="PaintingName" style="color:#FFFFFF";> result image is
-      </div>
-
-
-<div class='container'>
-
-<div id="input-text">
-Choose your affect vectors:
-</div>
-
-
-<div id = "resultDivText">
-Your Artitude:
-</div>
-
-</div>
-
-<div id='parent_div'>
-
-<div id="breakup"> </div>
-
-
-
-<div class="slidecontainer">
-  <p style="color:white"> Anger:</p>
-  <input id="angerValue" type="range" min="0" max="33" value="0" class="slider">
-  <p style="color:white"> Anxiety:</p>
-  <input id="anxietyValue" type="range" min="0" max="59" value="0" class="slider">
-  <p style="color:white"> Positive Emotion:</p>
-  <input id="positiveValue" type="range" min="0" max="90" value="0" class="slider">
-  <p style="color:white"> Sadness:</p>
-  <input id="sadnessValue" type="range" min="0" max="73" value="0" class="slider">
-   <p style="color:white"> Love: </p>
-  <input id="affiliationValue" type="range" min="0" max="51" value="0" class="slider">
-
-
-</div>
-
-
-<div id="breakup"> </div>
-<!-- ResultDiv is filled with result image -->
-<div id="resultDiv"></div>
-<div id="breakup"> </div>
-</div>
-
-
-
+          <div id="gradient-info">
+            Our Gradient interface gives the user the ability to explore the affect space spanned by narrator-selected pieces of visual art.
+            <br><br>
+            <img src="../static/imgs/about_page/gradient.png"/>
+            <br><br>
+          </div>
+      <br><br>      <br><br>
+        </div>
      <script src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 

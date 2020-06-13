@@ -16,7 +16,7 @@ body {
 {
   display: grid;
   grid-template-columns: 500px 1100px 500px;
-  grid-template-rows: 400px 300px;
+  grid-template-rows: 600px 300px;
   padding: 50px;
   clear: both;
   /*width: 1200px;*/
@@ -33,18 +33,23 @@ body {
 
 #targetimg
 {
-    height: 350px;
+    width: 400px;
 /*    margin-left: -200px;
    margin-right: auto;
     margin-top: 100px;
 */}
 
+#myInnerDiv {
+  position: absolute;
+  left:925px;
+}
+
 #anchor2img {
-height: 350px;
+height: 420px;
 }
 
 #anchor1img {
-height: 350px;
+height: 420px;
 }
 
 

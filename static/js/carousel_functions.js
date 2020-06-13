@@ -1,17 +1,29 @@
 // carousel_functions2.js
-//https://kenwheeler.github.io/slick/
-
-/*mad images = ['the-man-from-bantul-the-final-round-2000.jpg',
- 'samson-tearing-the-lion-s-mouth-1.jpg',
- "beggars-fighting-1634.jpg",
- "cossack-fighting-off-a-tiger-1811.jpg",
- "the-virgin-spanking-the-christ-child-before-three-witnesses-andre-breton-paul-eluard-and-the-1926.jpg",
- "the-bitter-drunk.jpg", "st-george-and-the-dragon-1.jpg",
- "red-field-1972.jpg", "a-fight.jpg"];
-*/
+//carousel design from: https://kenwheeler.github.io/slick/
 
 
+  function setAngerCarousel(){
+    images = ['the-man-from-bantul-the-final-round-2000.jpg',
+    'samson-tearing-the-lion-s-mouth-1.jpg',
+    "beggars-fighting-1634.jpg",
+    "cossack-fighting-off-a-tiger-1811.jpg",
+    "the-virgin-spanking-the-christ-child-before-three-witnesses-andre-breton-paul-eluard-and-the-1926.jpg",
+    "the-bitter-drunk.jpg", "st-george-and-the-dragon-1.jpg",
+    "red-field-1972.jpg", "a-fight.jpg", "the-battle-of-culloden-1746.jpg",
+    "rape-of-tamar-1640.jpg", "komposition-1984.jpg", 'hercules-fighting-with-the-lernaean-hydra-1634.jpg',
+    'the-family-1909.jpg', 'venus-punishing-profane-love-1595.jpg'
+  ];
 
+    console.log(images);
+    for (i=0; i<images.length; i++){
+      casing = document.createElement('div');
+      image = document.createElement('img');
+      image.src = '../imgs/images/' + images[i];
+      carousel1 = document.getElementsByClassName('carousel')[0];
+      casing.appendChild(image);
+      carousel1.appendChild(casing);
+    }
+  }
 
 
   function setPosemoCarousel(){
@@ -109,6 +121,7 @@
 
 
 $(document).ready(function(){
+  setAngerCarousel();
   setPosemoCarousel();
   setAnxietyCarousel();
   setSadCarousel();
