@@ -27,6 +27,13 @@ img {
   height: auto;
 }
 
+h3 {
+  font-family: Didot, "Didot LT STD";
+  font-size: 40px;
+  color: white;
+  padding-left: 30px;
+  text-align: left;
+}
 
 #welcome{
 font-family: 'MuseoModerno', cursive;
