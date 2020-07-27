@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ARTITUDE.TECH </title>
+
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <link href="../css/style.css" rel="stylesheet">
+
+
+  <link rel="shortcut icon" type="image/png" href="../imgs/palette.png" />
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js" crossorigin="anonymous"></script>
+
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    .containerTri {
+      width: 90%;
+      height: 90%;
+      color: white;
+      padding: 10px;
+    }
+
+    .leftpane {
+      width: 25%;
+      height: 100%;
+      float: left;
+      border-collapse: collapse;
+      color: white;
+      padding: 10px;
+    }
+
+    .middlepane {
+      width: 50%;
+      height: 100%;
+      float: left;
+      border-collapse: collapse;
+      color: white;
+      padding: 10px;
+    }
+
+    .rightpane {
+      width: 25%;
+      height: 100%;
+      position: relative;
+      float: right;
+      border-collapse: collapse;
+      color: white;
+      padding: 10px;
+    }
+
+    .toppane {
+      width: 100%;
+      height: 100px;
+      border-collapse: collapse;
+      color: white;
+    }
+
+    .grid-container {
+      display: grid;
+      color: white;
+      grid-template-columns: auto auto auto;
+      background-color: black;
+      grid-row-gap: 10px;
+      padding: 10px;
+      justify-content: space-evenly;
+    }
+
+    .grid-item {
+      background-color: black;
+      color: white;
+      border: 0px solid white;
+      padding: 10px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    .space {
+      padding: 50px;
+    }
+
+    .slidecontainer {
+      color: white;
+      text-align: center;
+      padding: 20px;
+      height: 100%;
+      border: 0px solid white;
+    }
+
+    .selectionButton {
+      background-color: black;
+      color: white;
+      border-color: white;
+      padding: 5px;
+      min-width: 100px;
+      border-radius: 4px;
+    }
+
+    .selectionButton:hover:enabled {
+      background-color: white;
+      color: black;
+      border-color: black;
+      padding: 5px;
+      min-width: 100px;
+    }
+
+    .selectionButton:disabled {
+      color: darkslategray;
+      border-color: darkslategray;
+
+    }
+
+    a {
+      background-color: black;
+      color: white;
+      border: 3px solid red;
+      padding: 5px;
+      min-width: 100px;
+      border-radius: 4px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    a:hover {
+      background-color: white;
+      color: black;
+      border-color: black;
+      padding: 5px;
+      min-width: 100px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <br>
+  <div style='padding-left: 40px'>
+    <a href="/">Back</a>
+  </div>
+
+  <header>Image to Affect</header>
+  <div class='toppane' style="justify-content: center; text-align: center; ">
+    <br>
+    <div id="input-text" style="font-size: 30pt; float: none;">
+      Rank the painting by emotion.
+    </div>
+  </div>
+
+  <div class='row'>
+
+    <div class='leftpane'>
+      <h3 style="text-align: center; font-family: Didot">
+        Guess #
+        <div id=current_pick style="display: inline;">
+          1
+        </div>
+        emotion</h3>
+      <div id="Selectors" class="slidecontainer">
+        <button id="anger_button" onclick="onButtonClicked(this.id)" class=selectionButton>
+          Anger
+        </button><br><br>
+        <button id="anxiety_button" onclick="onButtonClicked(this.id)" class=selectionButton>
+          Anxiety
+        </button><br><br>
+        <button id="positivity_button" onclick="onButtonClicked(this.id)" class=selectionButton>
+          Positivity
+        </button><br><br>
+        <button id="sadness_button" onclick="onButtonClicked(this.id)" class=selectionButton>
+          Sadness
+        </button><br><br>
+        <button id="love_button" onclick="onButtonClicked(this.id)" class=selectionButton>
+          Love
+        </button><br>
+      </div>
+    </div>
+
+    <div class='middlepane' style="justify-content: center; align-content: center;">
+      <div id="resultDiv"></div>
+    </div>
+
+    <div class='rightpane' style='color: white; display: block; margin-left: auto; margin-right: auto;'>
+      <h3 style="text-align: center; font-family: Didot">1:<div id=selection_1><br></div>
+      </h3>
+      <h3 style="text-align: center; font-family: Didot">2:<div id=selection_2><br></div>
+      </h3>
+      <h3 style="text-align: center; font-family: Didot">3:<div id=selection_3><br></div>
+      </h3>
+      <h3 style="text-align: center; font-family: Didot">4:<div id=selection_4><br></div>
+      </h3>
+      <h3 style="text-align: center; font-family: Didot">5:<div id=selection_5><br></div>
+      </h3>
+    </div>
+  </div>
+
+  <script src="../js/functions.js" defer></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
