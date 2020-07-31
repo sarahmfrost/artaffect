@@ -17,6 +17,11 @@ from random import randint
 app = Flask(__name__)
 
 
+def load_models():
+    embedded_model = load_model('static/data/model.h5')
+    return embedded_model
+
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -49,6 +54,15 @@ def GetUserImage():
 
     return render_template("user_input_output.html")#, jsonify(image.filename)
 #https://stackoverflow.com/questions/11262518/how-to-pass-uploaded-image-to-template-html-in-flask
+
+
+
+pred_embedding = embedded_model.predict(touch_data)  # run first stage
+print("pred.shape", pred.shape) # SF
+
+chosen_index = min(range(csv_len), key=lambda i: np.linalg.norm(features[i][4:] - pred)) # search for closest lyric, SF added [9:]
+
+
 
 
 
