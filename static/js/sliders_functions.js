@@ -34,7 +34,7 @@ allFilePaths = readCSVToArray(csvPath, '\r')
 ranNum = Math.floor(Math.random() * allFilePaths.length);
 
     var img = document.createElement("img");
-    img.src = "../ximgs/images/" + allFilePaths[ranNum];
+    img.src = "../imgs/images/" + allFilePaths[ranNum];
     img.id = "picture";
 
 console.log(allFilePaths[ranNum])
