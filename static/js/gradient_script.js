@@ -83,7 +83,7 @@ $(document).ready(function() {
             var butName = divID + 'but';
             $(butName).empty();
             var x = document.createElement('img');
-            x.src = '../imgs/images/' + randomAnchorImage;
+            x.src = '../imgs/images/' + randomImage;
 
             var divName = divID.replace("#","");
             x.setAttribute('id', divName+ 'img');
