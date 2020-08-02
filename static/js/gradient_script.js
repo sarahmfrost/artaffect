@@ -91,9 +91,9 @@ $(document).ready(function() {
             $(butName).prepend(x);
 
             for (i=0; i < liwc_filePaths.length; i++){
-                if (liwc_filePaths[i][0] == randomAnchorImage){
+                if (liwc_filePaths[i][0] == randomImage){
                     var affVec = liwc_filePaths[i].slice(1, 6);
-                    console.log(randomAnchorImage + affVec);
+                    console.log(randomImage + affVec);
                 };
             };
         }
