@@ -97,6 +97,7 @@ $(document).ready(function() {
                 };
             };
         }
+        $(divID).append(affVec);
         return affVec;
     };
 
@@ -134,7 +135,7 @@ C0 = left
         var c1 = anchor2img_affVec;
 
         var c0_num = [];
-        var c1_num = [];
+        var c1_num = [];                                     
 
         var c0plusc1 = [];
 
