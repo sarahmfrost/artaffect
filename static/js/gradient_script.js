@@ -203,6 +203,10 @@ C0 = left
             img.id = "targetimg";
             $('#myInnerDiv').append(img);
 
+
+            $('#AffectBlend').html("result affect blend is " + pred)
+
+
         }
     })
 }
