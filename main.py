@@ -17,9 +17,9 @@ from random import randint
 app = Flask(__name__)
 
 
-def load_models():
-    embedded_model = load_model('static/data/model.h5')
-    return embedded_model
+# def load_models():
+#     embedded_model = load_model('static/data/model.h5')
+#     return embedded_model
 
 
 @app.route('/')
@@ -27,40 +27,44 @@ def index():
     return render_template("index.html")
 
 
-app.config["IMAGE_UPLOADS"] = "/Users/sairah/Documents/GitHub/Image-To-Affect-Website/static/imgs/user_uploads"
+# app.config["IMAGE_UPLOADS"] = "/Users/sairah/Documents/GitHub/Image-To-Affect-Website/static/imgs/user_uploads"
 
 
-@app.route('/GetVector', methods=['GET', 'POST'])
-def GetVector():
-    return '5'
+# @app.route('/GetVector', methods=['GET', 'POST'])
+# def GetVector():
+#     return '5'
 
 #helpful tutorial - https://pythonise.com/series/learning-flask/flask-uploading-files
-@app.route('/GetUserImage', methods=['GET', 'POST'])
-def GetUserImage():
+# @app.route('/GetUserImage', methods=['GET', 'POST'])
+# def GetUserImage():
 
-    if request.method == "POST":
-            if request.files:
+#     if request.method == "POST":
+#             if request.files:
 
-                image = request.files["image"]
+#                 image = request.files["image"]
 
-                image.save(os.path.join(app.config["IMAGE_UPLOADS"], "userImage.jpg"))
+#                 image.save(os.path.join(app.config["IMAGE_UPLOADS"], "userImage.jpg"))
 
-                print(image.filename)
-                print("Image saved")
+#                 print(image.filename)
+#                 print("Image saved")
 
-                #resize image
-                # send through the ML
-                return redirect(request.url)
+#                 #resize image
+#                 # send through the ML
+#                 return redirect(request.url)
 
-    return render_template("user_input_output.html")#, jsonify(image.filename)
-#https://stackoverflow.com/questions/11262518/how-to-pass-uploaded-image-to-template-html-in-flask
+#     return render_template("user_input_output.html")#, jsonify(image.filename)
+# #https://stackoverflow.com/questions/11262518/how-to-pass-uploaded-image-to-template-html-in-flask
 
 
 
-pred_embedding = embedded_model.predict(touch_data)  # run first stage
-print("pred.shape", pred.shape) # SF
+# pred_embedding = embedded_model.predict(touch_data)  # run first stage
+# print("pred.shape", pred.shape) # SF
+# features = np.load('static/data/affect.npy')  # feature vectors for each image
 
-chosen_index = min(range(csv_len), key=lambda i: np.linalg.norm(features[i][4:] - pred)) # search for closest lyric, SF added [9:]
+# liwc_csv = pd.read_csv('static/data/liwc.csv')  # text for each image
+# csv_len = len(liwc_csv)
+
+# chosen_index = min(range(csv_len), key=lambda i: np.linalg.norm(features[i] - pred)) # search for closest lyric, SF added [9:]
 
 
 
@@ -82,6 +86,11 @@ def TouchToArt():
     liwc_csv = pd.read_csv('static/data/liwc.csv')  # text for each image
     csv_len = len(liwc_csv)
 
+    chosen_js_list = json.dumps((features[chosen_index]).tolist())
+    print("type of index is", type(chosen_js_list))
+
+    #chosen_js_list = json.dumps(np.arange(features[chosen_index]))
+    print("chosen js list is", chosen_js_list) # now it's a string
 
 
     chosen_index = min(range(csv_len), key=lambda i: np.linalg.norm(features[i] - pred)) # search for closest art
