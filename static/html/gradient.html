@@ -76,7 +76,31 @@
         </div>
       </div>
 
-<div id= "AffectBlend"></div>
+<div id= "AffectBlend" style="color: #ffffff">HI</div>
+
+<div id="moreInfo">
+<div id="InfoText">
+    <h2>
+    how does this work? </br></br>
+
+    This interaction method is a progression illustrating incremental movement towards an anchor image. The page contains a result image between two anchor images arranged in a line, and controls for feels- more-like-this (accessed by clicking on the anchor). Clicking on either anchor image increments or decrements a coefficient, which we use to interpolate between the affect vectors associated with the anchors. To explore the affective space that the two anchor images span, we index the resulting affect vector into the database and display the retrieved image at a position interpolated between the anchors. As a result, the physical position of the target image encodes the relative similarity of its affect to the affect of the two anchors. A button below each anchor image serves as a refresh icon. If the user clicks on either button, the corresponding anchor image is replaced with a random anchor image, and the result image is moved back to the center.
+    </h2>
+</div>
+
+
+<div id="InfoVideo">
+    <h2>
+    Please see the video below to see our gradient method in action.
+    </h2>
+    </br></br>
+
+<video width="1100" controls>
+  <source src="../imgs/gradient_video.mov" type="video/mp4">
+<!--   <source src="movie.ogg" type="video/ogg">
+ -->Your browser does not support the video tag.
+</video>
+</div>
+</div>
 
   <script src="../js/gradient_script.js" defer></script>
   </body>
