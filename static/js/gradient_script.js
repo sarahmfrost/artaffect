@@ -104,6 +104,14 @@ $(document).ready(function() {
     var anchor1img_affVec = getBeginningImage('#anchor1');
     var anchor2img_affVec = getBeginningImage('#anchor2');
 
+
+    //NEW CODE TO DISPLAY AFFECT VECTORS
+    newDiv1 = document.createElement("div1");
+    newDiv1.setAttribute('id', 'newDiv1');
+
+    
+
+
     $('#mbutton1').click(function(){
         getBeginningImage('#anchor1');
         getBeginningImage('#target');
