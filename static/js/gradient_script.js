@@ -94,6 +94,8 @@ $(document).ready(function() {
                 if (liwc_filePaths[i][0] == randomImage){
                     var affVec = liwc_filePaths[i].slice(1, 6);
                     console.log(randomImage + affVec);
+                    $('#AffectBlend1').append(randomImage + " " + affVec + "<br>")
+
                 };
             };
         }
@@ -164,7 +166,7 @@ C0 = left
         console.log('c1num', c1_num);
 
         for(var i=0; i<5; i++) {
-            imgInt = c0_num[i] + c1_num[i];
+            imgInt = (c0_num[i] + c1_num[i]);
             c0plusc1.push(imgInt);
 
         }
@@ -177,7 +179,14 @@ C0 = left
     "affiliation": c0plusc1[4]}
 
     console.log("pred is", pred);
+
+
+
+    $('#AffectBlend2').append("affect blend is " + c0plusc1 + "<br> ")
+
+
     return pred
+
 
     }
 
@@ -198,6 +207,10 @@ C0 = left
             console.log("new data is" + data)
             console.log("new features is" + features)
 
+            $('#AffectBlend2').append("new data is " + data + " ")
+            $('#AffectBlend2').append("new features is" + features)
+
+
             $('#myInnerDiv').empty();
             var img = document.createElement("img");
             img.src = "/static/imgs/images/" + data;
@@ -212,7 +225,6 @@ C0 = left
             $('#myInnerDiv').append(img);
 
 
-            $('#AffectBlend').html("result affect blend is " + pred)
 
 
         }
@@ -256,6 +268,8 @@ var a=.5;
 
             a = a - .1;
             console.log("a is", a);
+            $('#AffectBlend2').append("a is " + a + "<br> ")
+
         }
     });
 
@@ -272,6 +286,8 @@ var a=.5;
 
             a = a + .1;
             console.log("a is", a);
+            $('#AffectBlend2').append("a is " + a + "<br> ")
+
         }
 
     });
