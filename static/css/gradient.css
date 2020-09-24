@@ -16,7 +16,7 @@ body {
 {
   display: grid;
   grid-template-columns: 500px 1100px 500px;
-  grid-template-rows: 600px 300px;
+  grid-template-rows: 600px 300px 300px;
   padding: 50px;
   clear: both;
   /*width: 1200px;*/
@@ -25,10 +25,13 @@ body {
 
 .grid-item
 {
-/*  border: 1px solid rgba(0, 0, 0, 1.0);
-*/padding: 20px;
+  border: 1px solid rgba(1.0, 1.0, 1.0, 1.0);
+  border-color: white;
+  padding: 20px;
   font-size: 30px;
   text-align: center;
+  color: white;
+
 }
 
 #targetimg

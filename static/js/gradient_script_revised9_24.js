@@ -119,26 +119,37 @@ $(document).ready(function() {
 1b. print affect vectors for anchor images
 */
 
-    //NEW CODE TO DISPLAY AFFECT VECTORS
-    newDiv1 = document.createElement("div1");
-    newDiv1.setAttribute('id', 'newDiv1');
+    //EDITED CODE TO DISPLAY 3 AFFECT VECTORS
+    var target_affVec = getBeginningImage('#target');
+    var anchor1img_affVec = getBeginningImage('#anchor1');
+    var anchor2img_affVec = getBeginningImage('#anchor2');
 
+
+    $('#Affect1').html("Affect vector: " + anchor1img_affVec)
+    $('#Affect2').html("Affect vector: " + anchor2img_affVec)
+    $('#targetAffect').html("Affect vector: " + target_affVec)
 
 
 /*
 1c. Set up refresh buttons for anchor images
 */
 
-    $('#mbutton1').click(function(){
-        getBeginningImage('#anchor1');
-        getBeginningImage('#target');
+  $('#mbutton1').click(function(){
+        var aff1 = getBeginningImage('#anchor1');
+        var aff2 = getBeginningImage('#target');
 
+        $('#Affect1').html("Affect vector: " + aff1)
+        $('#targetAffect').html("Affect vector " + aff2)
 
     });
 
     $('#mbutton2').click(function(){
-        getBeginningImage('#anchor2');
-        getBeginningImage('#target');
+        var aff1 = getBeginningImage('#anchor2');
+        var aff2 = getBeginningImage('#target');
+
+        $('#Affect2').html("Affect vector: " + aff1)
+        $('#targetAffect').html("Affect vector " + aff2)
+
 
     });
 

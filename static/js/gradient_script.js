@@ -112,7 +112,7 @@ $(document).ready(function() {
     $('#Affect1').html("Affect vector: " + anchor1img_affVec)
     $('#Affect2').html("Affect vector: " + anchor2img_affVec)
     $('#targetAffect').html("Affect vector: " + target_affVec)
-    
+
 
 
     $('#mbutton1').click(function(){
@@ -233,7 +233,7 @@ C0 = left
 
 
 
-            
+
 
         }
     })
