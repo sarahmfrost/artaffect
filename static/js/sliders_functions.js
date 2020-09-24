@@ -1,4 +1,3 @@
-
 //const csvPath = "static/data/image_path.csv"
 //var allFilePaths = []
 
