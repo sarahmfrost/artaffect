@@ -110,7 +110,9 @@ def TouchToArt():
 @app.route('/GradientArt', methods=['GET', 'POST'])
 def GradientArt():
 
+
     data_from_js = request.get_json()
+
     pred = [data_from_js['positive'],
     data_from_js['anxiety'],
     data_from_js['anger'],
