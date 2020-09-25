@@ -102,9 +102,6 @@ $(document).ready(function() {
         for (i=0; i < liwc_filePaths.length; i++){
             if (liwc_filePaths[i][0] == randomImage){
                 var affVec = liwc_filePaths[i].slice(1, 6);
-                console.log(randomImage + affVec);
-                $('#AffectBlend1').append(randomImage + " " + affVec + "<br>")
-
             };
         };
         return affVec;
@@ -120,14 +117,14 @@ $(document).ready(function() {
 */
 
     //EDITED CODE TO DISPLAY 3 AFFECT VECTORS
-    var target_affVec = getBeginningImage('#target');
-    var anchor1img_affVec = getBeginningImage('#anchor1');
-    var anchor2img_affVec = getBeginningImage('#anchor2');
+    //var target_affVec = getBeginningImage('#target');
+    //var anchor1img_affVec = getBeginningImage('#anchor1');
+    //var anchor2img_affVec = getBeginningImage('#anchor2');
 
 
     $('#Affect1').html("Affect vector: " + anchor1img_affVec)
     $('#Affect2').html("Affect vector: " + anchor2img_affVec)
-    $('#targetAffect').html("Affect vector: " + target_affVec)
+    //$('#targetAffect').html("Affect vector: " + target_affVec)
 
 
 /*
@@ -136,19 +133,15 @@ $(document).ready(function() {
 
   $('#mbutton1').click(function(){
         var aff1 = getBeginningImage('#anchor1');
-        var aff2 = getBeginningImage('#target');
 
         $('#Affect1').html("Affect vector: " + aff1)
-        $('#targetAffect').html("Affect vector " + aff2)
 
     });
 
     $('#mbutton2').click(function(){
         var aff1 = getBeginningImage('#anchor2');
-        var aff2 = getBeginningImage('#target');
 
         $('#Affect2').html("Affect vector: " + aff1)
-        $('#targetAffect').html("Affect vector " + aff2)
 
 
     });
@@ -159,7 +152,11 @@ $(document).ready(function() {
 2a. get all gradient blends between two anchor images and save to array
 */
 
-function getGradientBlends{
+TestOne = [0,0,0,0,0]
+TestTwo = [100,100,100,100,100]
+
+
+function getGradientBlends(anchor1img_affVec, anchor2img_affVec){
 
     weight = [.9,.8,.7,.6,.5,.4,.3,.2,.1]
     opp_weight = [.1,.2,.3,.4,.5,.6,.7,.8,.9]
@@ -169,22 +166,29 @@ function getGradientBlends{
     // array of affects for one gradient blend
     gradient_blend = []
 
+
     for(var i=0; i<weight.length; i++){
         for (var k=0; k<5; k++){
-            grad_piece = weight[i] * anchor1img_affVec[k] + opp_weight[i] * anchor2img_affVec[k]
-            gradient_blend.push[grad_piece]
+            grad_piece = (weight[i] * anchor1img_affVec[k]) + (opp_weight[i] * anchor2img_affVec[k]);
+            grad_piece = grad_piece.toFixed(3);
+
+            gradient_blend.push(grad_piece);
+            grad_piece = 0
         }
-        gradient_blends.push[gradient_blend]
+
+        gradient_blends.push(gradient_blend)
+        gradient_blend = []
     }
-    return gradient_blends;
-    console.log(gradient_blends)
     /*
-    2b. print the weight and gradient blends
+    2b. print the gradient blends (This has been moved to around line 213)
     */
+
+    return gradient_blends;
 
 }
 
-gradient_blends = getGradientBlends()
+gradient_blends = getGradientBlends(anchor1img_affVec, anchor2img_affVec)
+//gradient_blends = getGradientBlends(TestOne, TestTwo)
 
 /*
 3a. run lookup function for all gradient blends, ensure there are no duplicates,
@@ -194,51 +198,91 @@ save file names to another array
 
 //array of gradient image names
 image_names = []
+pred_array = []
 
     function getGradientImages(gradient_blends){
         for(var i=0; i<gradient_blends.length; i++){
-            var pred = {"positive": gradient_blends[i][0], "anxiety": gradient_blends[i][1], "anger": gradient_blends[i][2],
-            "sad": gradient_blends[i][3], "affiliation": gradient_blends[i][4]}
+            var pred = {"positive": Number(gradient_blends[i][0]), "anxiety": Number(gradient_blends[i][1]), "anger": Number(gradient_blends[i][2]),
+            "sad": Number(gradient_blends[i][3]), "affiliation": Number(gradient_blends[i][4])}
             // run getGradientImage with each pred
-            img_src = getGradientImage(pred);
-            // TO DO - have to ensure there are no duplicates!
-            image_names.push(img_src);
+
+            pred_array.push(pred);
+            pred = {}
         }
+        console.log(pred_array)
 
-    return(image_names)
-    }
+        var pred_array_string = JSON.stringify(pred_array);
+        $('#gradients').text("Gradient arrays are \n" +pred_array_string)
 
-    function getGradientImage(pred){
-        $.ajax({
-            url: "/GradientArt",
-            type: 'POST',
-            data: JSON.stringify (pred),
-            contentType: "application/json",
-            dataType: 'json',
-            success:function( data ){
-                //this should be the image name
-                var res = dataTosplit.split(";");
-                var data = res[0];
-                var features = res[1];
-            }
-        })
-    return data;
-    }
+        var promises = pred_array.map(getGradientImage)
+
+        Promise.allSettled(promises)
+            .then((results) => results.forEach((result) => console.log(result)))
+            .catch(error => {console.log("there is an error", error)})
+
+    //need to get the results in an array, to print out
 
 /*
 3b. print file names and affect vectors
 */
 
-//Print data + features
+
+    //return(image_names)
+    }
+
+
+    function getGradientImage(pred) {
+      return new Promise((resolve, reject) => {
+        $.ajax({
+          url: "/GradientArt",
+          type: 'POST',
+          data: JSON.stringify (pred),
+          contentType: "application/json",
+          dataType: 'json',
+          success: function (data) {
+            resolve(data)
+          },
+          error: function (error) {
+            reject(error)
+          },
+        })
+      })
+    }
+
+
+test = getGradientImages(gradient_blends);
 
 
 /*
-4a. Build Function to move gradient images across screen
-4b. set up "more like this" buttons to move between anchor images
+4a. Build Function to get images and move gradient images across screen
 */
 
+
 /*
-BELOW CODE IS FOR STEPS 4A AND 4B
+4b. set up "more like this" and "refresh anchor" buttons
+
+*/
+
+
+$('#FLT_Left').click(function(){
+        console.log("left Feels more like this clicked")
+        });
+
+$('#FLT_Right').click(function(){
+        console.log("Right feels more like this clicked")
+        });
+
+
+$('#new_anchor_left').click(function(){
+            getBeginningImage('#anchor1');
+        });
+
+$('#new_anchor_right').click(function(){
+            getBeginningImage('#anchor2');
+        });
+
+/*
+BELOW CODE IS FOR STEPS 4A
 
 
   var dataTosplit = data;
@@ -269,59 +313,21 @@ BELOW CODE IS FOR STEPS 4A AND 4B
 
 
 
-
+/*
 function move_img(str){
     var step=63; // change this to different step value
 
     if (str == "left"){
-    var y=document.getElementById('myInnerDiv').offsetLeft;
-    y= y - step;
-    document.getElementById('myInnerDiv').style.left= y + "px";
+        var y=document.getElementById('myInnerDiv').offsetLeft;
+        y= y - step;
+        document.getElementById('myInnerDiv').style.left= y + "px";
     }
     else if (str == "right"){
-    var y=document.getElementById('myInnerDiv').offsetLeft;
-    y= y + step;
-    document.getElementById('myInnerDiv').style.left= y + "px";
-}
-}
+        var y=document.getElementById('myInnerDiv').offsetLeft;
+        y= y + step;
+        document.getElementById('myInnerDiv').style.left= y + "px";
+    }
+}*/
 
 
-
-var a=.5;
-
-    $('#anchor1but').click(function(){
-        if (a >= .1){
-            newTargetImage(a);
-
-            if ($('#myInnerDiv').is(':empty') ){
-                newTargetImage(a);
-            }
-
-            move_img('left');
-
-            a = a - .1;
-            console.log("a is", a);
-            $('#AffectBlend2').append("a is " + a + "<br> ")
-
-        }
-    });
-
-
-    $('#anchor2but').click(function(){
-        if (a < .99){
-            newTargetImage(a);
-            move_img('right');
-
-
-        if ($('#myInnerDiv').is(':empty') ){
-            newTargetImage(a);
-        }
-
-            a = a + .1;
-            console.log("a is", a);
-            $('#AffectBlend2').append("a is " + a + "<br> ")
-
-        }
-
-    });
 })

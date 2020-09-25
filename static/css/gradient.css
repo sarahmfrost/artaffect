@@ -105,15 +105,15 @@ button:hover {
 
 }
 
-#anchor1but:hover {
+/*#anchor1but:hover {
   cursor: pointer;
 }
 
 #anchor2but:hover {
   cursor: pointer;
-}
+}*/
 
-#anchor1img:hover {
+/*#anchor1img:hover {
   border: 4px solid #C12957;
   border-radius: 6px;
 }
@@ -121,5 +121,5 @@ button:hover {
 #anchor2img:hover {
   border: 4px solid #C12957;
   border-radius: 6px;
-}
+}*/
 
