@@ -94,7 +94,7 @@ $(document).ready(function() {
                 if (liwc_filePaths[i][0] == randomImage){
                     var affVec = liwc_filePaths[i].slice(1, 6);
                     console.log(randomImage + affVec);
-                    $('#AffectBlend1').append(randomImage + " " + affVec + "<br>")
+                    //$('#AffectBlend1').append(randomImage + " " + affVec + "<br>")
 
                 };
             };
@@ -109,9 +109,9 @@ $(document).ready(function() {
     var anchor2img_affVec = getBeginningImage('#anchor2');
 
 
-    $('#Affect1').html("Affect vector: " + anchor1img_affVec)
-    $('#Affect2').html("Affect vector: " + anchor2img_affVec)
-    $('#targetAffect').html("Affect vector: " + target_affVec)
+    //$('#affect1').html("Affect vector: " + anchor1img_affVec)
+    //$('#affect3').html("Affect vector: " + anchor2img_affVec)
+    //$('#affect2').html("Affect vector: " + target_affVec)
     
 
 
@@ -119,8 +119,8 @@ $(document).ready(function() {
         var aff1 = getBeginningImage('#anchor1');
         var aff2 = getBeginningImage('#target');
 
-        $('#Affect1').html("Affect vector: " + aff1)
-        $('#targetAffect').html("Affect vector " + aff2)
+        //$('#affect1').html("Affect vector: " + aff1)
+        //$('#affect2').html("Affect vector " + aff2)
 
     });
 
@@ -128,8 +128,8 @@ $(document).ready(function() {
         var aff1 = getBeginningImage('#anchor2');
         var aff2 = getBeginningImage('#target');
 
-        $('#Affect2').html("Affect vector: " + aff1)
-        $('#targetAffect').html("Affect vector " + aff2)
+        //$('#affect3').html("Affect vector: " + aff1)
+        //$('#affect2').html("Affect vector " + aff2)
 
 
     });
@@ -189,7 +189,7 @@ C0 = left
 
 
 
-    $('#AffectBlend2').append("affect blend is " + c0plusc1 + "<br> ")
+    //$('#affect2').write("affect blender help is " + c0plusc1 + "<br> ")
 
 
     return pred
@@ -276,7 +276,7 @@ var a=.5;
 
             a = a - .1;
             console.log("a is", a);
-            $('#AffectBlend2').append("a is " + a + "<br> ")
+            $('#affect1').html("a is this needs help" + a+ "<br> ")
 
         }
     });
@@ -294,7 +294,7 @@ var a=.5;
 
             a = a + .1;
             console.log("a is", a);
-            $('#AffectBlend2').append("a is " + a + "<br> ")
+            $('#affect3').append("a is this needs help" + a + "<br> ")
 
         }
 

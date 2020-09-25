@@ -6,7 +6,7 @@ Process order:
 1b. print affect vectors for anchor images
 1c. Set up refresh buttons for anchor images
 
-2a. get all gradient blends between two anchor images and save to array
+2a. ge  t all gradient blends between two anchor images and save to array
 2b. print the weight and gradient blends
 
 3a. run lookup function for all gradient blends, ensure there are no duplicates,
@@ -148,7 +148,7 @@ $(document).ready(function() {
 2a. get all gradient blends between two anchor images and save to array
 */
 
-function getGradientBlends{
+function getGradientBlends(){
 
     weight = [.9,.8,.7,.6,.5,.4,.3,.2,.1]
     opp_weight = [.1,.2,.3,.4,.5,.6,.7,.8,.9]
@@ -290,7 +290,7 @@ var a=.5;
 
             a = a - .1;
             console.log("a is", a);
-            $('#AffectBlend2').append("a is " + a + "<br> ")
+            $('#affect1').append("a is this needs help" + a + "<br> ")
 
         }
     });
@@ -308,7 +308,7 @@ var a=.5;
 
             a = a + .1;
             console.log("a is", a);
-            $('#AffectBlend2').append("a is " + a + "<br> ")
+            $('#AffectBlend2').append("a is this needs help" + a + "<br> ")
 
         }
 
