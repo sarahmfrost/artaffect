@@ -152,15 +152,15 @@ $(document).ready(function() {
 2a. get all gradient blends between two anchor images and save to array
 */
 
-<<<<<<< HEAD
-function getGradientBlends(){
-=======
+//<<<<<<< HEAD
+//function getGradientBlends(){
+//=======
 TestOne = [0,0,0,0,0]
 TestTwo = [100,100,100,100,100]
 
 
 function getGradientBlends(anchor1img_affVec, anchor2img_affVec){
->>>>>>> cd505ec54dd1c7917646f41b606f958891076277
+//>>>>>>> cd505ec54dd1c7917646f41b606f958891076277
 
     weight = [.9,.8,.7,.6,.5,.4,.3,.2,.1]
     opp_weight = [.1,.2,.3,.4,.5,.6,.7,.8,.9]
@@ -284,7 +284,7 @@ $('#new_anchor_left').click(function(){
 $('#new_anchor_right').click(function(){
             getBeginningImage('#anchor2');
         });
-
+})
 /*
 BELOW CODE IS FOR STEPS 4A
 
@@ -375,7 +375,4 @@ var a=.5;
         document.getElementById('myInnerDiv').style.left= y + "px";
     }
 }*/
->>>>>>> cd505ec54dd1c7917646f41b606f958891076277
-
-
-})
+//>>>>>>> cd505ec54dd1c7917646f41b606f958891076277
