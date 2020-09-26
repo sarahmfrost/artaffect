@@ -162,8 +162,16 @@ TestTwo = [100,100,100,100,100]
 function getGradientBlends(anchor1img_affVec, anchor2img_affVec){
 //>>>>>>> cd505ec54dd1c7917646f41b606f958891076277
 
-    weight = [.9,.8,.7,.6,.5,.4,.3,.2,.1]
-    opp_weight = [.1,.2,.3,.4,.5,.6,.7,.8,.9]
+
+    //Option for 9 gradient images
+    //weight = [.9,.8,.7,.6,.5,.4,.3,.2,.1]
+    //opp_weight = [.1,.2,.3,.4,.5,.6,.7,.8,.9]
+
+    weight = [.9,.7,.5,.3,.1]
+    opp_weight = [.1,.3,.5,.7,.9]
+
+
+
 
     //array of arrays of gradient blends
     gradient_blends = []
@@ -213,6 +221,9 @@ pred_array = []
             pred_array.push(pred);
             pred = {}
         }
+
+        image_values = []
+
         console.log(pred_array)
 
         var pred_array_string = JSON.stringify(pred_array);
@@ -220,10 +231,16 @@ pred_array = []
 
         var promises = pred_array.map(getGradientImage)
 
-        Promise.allSettled(promises)
-            .then((results) => results.forEach((result) => console.log(result)))
+        return Promise.allSettled(promises)
+            .then(
+                (results) =>
+                    {
+                        results.forEach((result) => image_values.push(result.value))
+                        return image_values
+                    }
+                )
             .catch(error => {console.log("there is an error", error)})
-
+    }
     //need to get the results in an array, to print out
 
 /*
@@ -232,7 +249,7 @@ pred_array = []
 
 
     //return(image_names)
-    }
+
 
 
     function getGradientImage(pred) {
@@ -254,12 +271,31 @@ pred_array = []
     }
 
 
-test = getGradientImages(gradient_blends);
+getGradientImages(gradient_blends)
+.then(result => {showImages(result)})
+
+
 
 
 /*
 4a. Build Function to get images and move gradient images across screen
 */
+
+    function showImages(image_array) {
+
+        for (var i=0; i<image_array.length; i++){
+            var res = image_array[i].split(";");
+            var data = res[0];
+            console.log("data is", data)
+
+            var img = document.createElement("img");
+            img.width = "300";
+            img.src = "/static/imgs/images/" + data;
+
+            $('#target' + i + "").append(img);
+
+        }
+    }
 
 
 /*
@@ -285,94 +321,4 @@ $('#new_anchor_right').click(function(){
             getBeginningImage('#anchor2');
         });
 })
-/*
-BELOW CODE IS FOR STEPS 4A
 
-
-  var dataTosplit = data;
-            var res = dataTosplit.split(";");
-            var data = res[0];
-            var features = res[1];
-            console.log("new data is" + data)
-            console.log("new features is" + features)
-
-            $('#AffectBlend2').append("new data is " + data + " ")
-            $('#AffectBlend2').append("new features is" + features)
-
-
-            $('#myInnerDiv').empty();
-            var img = document.createElement("img");
-            img.src = "/static/imgs/images/" + data;
-
-            if ((img.src == $('#anchor1img').prop('src')) || (img.src == $('#anchor2img').prop('src'))){
-                console.log('same image');
-                return;
-            }
-
-
-            img.id = "targetimg";
-            $('#myInnerDiv').append(img);
-
-*/
-
-
-
-/*
-function move_img(str){
-    var step=63; // change this to different step value
-
-    if (str == "left"){
-        var y=document.getElementById('myInnerDiv').offsetLeft;
-        y= y - step;
-        document.getElementById('myInnerDiv').style.left= y + "px";
-    }
-    else if (str == "right"){
-<<<<<<< HEAD
-    var y=document.getElementById('myInnerDiv').offsetLeft;
-    y= y + step;
-    document.getElementById('myInnerDiv').style.left= y + "px";
-}
-}
-
-
-
-var a=.5;
-
-    $('#anchor1but').click(function(){
-        if (a >= .1){
-            newTargetImage(a);
-
-            if ($('#myInnerDiv').is(':empty') ){
-                newTargetImage(a);
-            }
-
-            move_img('left');
-
-            a = a - .1;
-            console.log("a is", a);
-            $('#affect1').append("a is this needs help" + a + "<br> ")
-
-        }
-    });
-
-
-    $('#anchor2but').click(function(){
-        if (a < .99){
-            newTargetImage(a);
-            move_img('right');
-
-
-        if ($('#myInnerDiv').is(':empty') ){
-            newTargetImage(a);
-        }
-
-            a = a + .1;
-            console.log("a is", a);
-            $('#AffectBlend2').append("a is this needs help" + a + "<br> ")
-=======
-        var y=document.getElementById('myInnerDiv').offsetLeft;
-        y= y + step;
-        document.getElementById('myInnerDiv').style.left= y + "px";
-    }
-}*/
-//>>>>>>> cd505ec54dd1c7917646f41b606f958891076277

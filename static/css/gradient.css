@@ -1,8 +1,6 @@
 /*gradient.css
 */
 
-
-
 body {
   background-color: #000000;
   color: black;
@@ -15,12 +13,10 @@ body {
 .grid-container
 {
   display: grid;
-  grid-template-columns: 500px 1100px 500px;
+  grid-template-columns: 500px 1700px 500px;
   grid-template-rows: 600px 300px 300px;
   padding: 50px;
   clear: both;
-  /*width: 1200px;*/
-  /*margin-left: 200px;*/
 }
 
 .grid-item
@@ -34,13 +30,10 @@ body {
 
 }
 
-#targetimg
-{
-    width: 400px;
-/*    margin-left: -200px;
-   margin-right: auto;
-    margin-top: 100px;
-*/}
+#target0, #target1, #target2, #target3, #target4{
+  width: 320px;
+  float: left;
+}
 
 #myInnerDiv {
   position: absolute;
@@ -48,11 +41,11 @@ body {
 }
 
 #anchor2img {
-height: 420px;
+width: 450px;
 }
 
 #anchor1img {
-height: 420px;
+width: 450px;
 }
 
 
@@ -70,8 +63,6 @@ height: 420px;
     margin: 0 auto;
     text-align: center;
     display: inline-block;
-/*    margin-left: 375px;
-    float: left;*/
 
 }
 
@@ -105,21 +96,4 @@ button:hover {
 
 }
 
-/*#anchor1but:hover {
-  cursor: pointer;
-}
-
-#anchor2but:hover {
-  cursor: pointer;
-}*/
-
-/*#anchor1img:hover {
-  border: 4px solid #C12957;
-  border-radius: 6px;
-}
-
-#anchor2img:hover {
-  border: 4px solid #C12957;
-  border-radius: 6px;
-}*/
 
