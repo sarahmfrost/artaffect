@@ -112,7 +112,7 @@ $(document).ready(function() {
     //$('#affect1').html("Affect vector: " + anchor1img_affVec)
     //$('#affect3').html("Affect vector: " + anchor2img_affVec)
     //$('#affect2').html("Affect vector: " + target_affVec)
-    
+
 
 
     $('#mbutton1').click(function(){
@@ -299,4 +299,26 @@ var a=.5;
         }
 
     });
+
+
+/*From gradient_revised:
+
+$('#FLT_Left').click(function(){
+        console.log("left Feels more like this clicked")
+        });
+
+$('#FLT_Right').click(function(){
+        console.log("Right feels more like this clicked")
+        });
+
+
+$('#new_anchor_left').click(function(){
+            getBeginningImage('#anchor1');
+        });
+
+$('#new_anchor_right').click(function(){
+            getBeginningImage('#anchor2');
+        });
+*/
+
 })

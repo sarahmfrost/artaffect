@@ -80,18 +80,12 @@ def TouchToArt():
     data_from_js['affiliation']
     ]
 
+    print(pred)
     print('main.py clicked getArt')
 
     features = np.load('static/data/affect.npy')  # feature vectors for each image
     liwc_csv = pd.read_csv('static/data/liwc.csv')  # text for each image
     csv_len = len(liwc_csv)
-
-    chosen_js_list = json.dumps((features[chosen_index]).tolist())
-    print("type of index is", type(chosen_js_list))
-
-    #chosen_js_list = json.dumps(np.arange(features[chosen_index]))
-    print("chosen js list is", chosen_js_list) # now it's a string
-
 
     chosen_index = min(range(csv_len), key=lambda i: np.linalg.norm(features[i] - pred)) # search for closest art
     #print("features of selected art are", features[chosen_index])
@@ -109,10 +103,7 @@ def TouchToArt():
 
 @app.route('/GradientArt', methods=['GET', 'POST'])
 def GradientArt():
-
-
     data_from_js = request.get_json()
-
     pred = [data_from_js['positive'],
     data_from_js['anxiety'],
     data_from_js['anger'],
