@@ -17,12 +17,10 @@ body {
   grid-template-rows: 600px 300px 300px;
   padding: 50px;
   clear: both;
-  border-collapse: collapse;
 }
 
 .grid-item
 {
-  z-index: -1;
   border: 1px solid white;
   padding: 20px;
   font-size: 30px;
