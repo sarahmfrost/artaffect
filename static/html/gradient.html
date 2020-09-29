@@ -40,12 +40,14 @@
         <div id="target2"></div>
         <div id="target3"></div>
         <div id="target4"></div>
+        <div id="target5"></div>
+        <div id="target6"></div>
       </div>
       <div id = "anchor2" class="grid-item" style = "border-bottom: 0">
         <div id = "anchor2but"></div>
       </div>
 <!--         First row ends, second row begins  -->
-      <div class="grid-item" style = "border-top: 0; border-bottom: 0">
+      <div id= "Affect1" class="grid-item" style = "border-top: 0; border-bottom: 0">
           <!-- <button id="new_anchor_left">
             <img src = "../imgs/refresh_white.png" height = "40">
           </button>
@@ -55,7 +57,7 @@
       </div>
       <div id = "grad_slider" class="grid-item">
           <p style="color:white"> Explore the emotional space between two images:</p>
-          <input id="sliderValue" type="range" min="0" max="100" value="50" step="25" class="slider">
+          <input id="sliderValue" type="range" min="0" max="60" value="30" step="10" class="slider">
           <br><br>
           <button id="new_anchors">
             <img src = "../imgs/refresh_white.png" height = "40"> Try again with new images
@@ -67,7 +69,7 @@
           <button> -->
 <!-- =======
  -->
-      <div class="grid-item" style = "border-top: 0; border-bottom: 0">
+      <div id= "Affect2" class="grid-item" style = "border-top: 0; border-bottom: 0">
         <!-- <button id="new_anchor_right">
          <img src = "../imgs/refresh_white.png" height = "40">
         </button>
@@ -90,9 +92,9 @@
           <h2>Affect vector:</h2>
         </div> -->
 <!-- ======= -->
-      <div id= "Affect1" class="grid-item" style = "border-top: 0"></div>
+      <div class="grid-item" style = "border-top: 0"></div>
       <div id = "gradients" class="grid-item"></div>
-      <div id= "Affect2" class="grid-item" style = "border-top: 0"></div>
+      <div class="grid-item" style = "border-top: 0"></div>
 <!-- >>>>>>> cd505ec54dd1c7917646f41b606f958891076277
  -->
 <!--         third row ends  -->
@@ -103,9 +105,17 @@
         <h2>
         how does this work? </br></br>
 
-        This interaction method is a progression illustrating incremental movement between two anchor images. The page contains a result image between two anchor images arranged in a line, and controls for feels- more-like-this (accessed by clicking on the slider). Moving the slider increments or decrements a coefficient, which we use to interpolate between the affect vectors associated with the anchors. To explore the affective space that the two anchor images span, we index the resulting affect vector into the database and display the retrieved image at a position interpolated between the anchors. As a result, the physical position of the target image encodes the relative similarity of its affect to the affect of the two anchors.
-        </h2>
+        This interaction method is a progression illustrating incremental movement between two anchor images. The page contains a result image between two anchor images arranged in a line, and controls for feels- more-like-this (accessed by moving the slider). Moving the slider increments or decrements a coefficient, which we use to interpolate between the affect vectors associated with the anchors. To explore the affective space that the two anchor images span, we index the resulting affect vector into the database and display the retrieved image at a position interpolated between the anchors. As a result, the physical position of the target image encodes the relative similarity of its affect to the affect of the two anchors.
+        </h2></br></br>
       </div>
+      <div id = "whyRepeats">
+        <h2>
+        Why am I seeing repeated images? </br></br>
+
+        This interaction method is a progression illustrating incremental movement between two anchor images. The page contains a result image between two anchor images arranged in a line, and controls for feels- more-like-this (accessed by moving the slider). Moving the slider increments or decrements a coefficient, which we use to interpolate between the affect vectors associated with the anchors. To explore the affective space that the two anchor images span, we index the resulting affect vector into the database and display the retrieved image at a position interpolated between the anchors. As a result, the physical position of the target image encodes the relative similarity of its affect to the affect of the two anchors.
+        </h2></br></br>
+      </div>
+
     </div>
 
     <script src="../js/gradient_script_revised9_24.js" defer></script>

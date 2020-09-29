@@ -20,6 +20,10 @@ save file names to another array
 0. get filepaths for images from CSV
 */
 
+
+//alert("Please increase size of your browser window for optimal experience");
+
+
 var csvFile = "../data/images.csv";
 
 var liwc_csv = "../data/liwc_toParse.csv";
@@ -112,8 +116,8 @@ $(document).ready(function() {
     //var anchor2img_affVec = getBeginningImage('#anchor2');
 
 
-    $('#Affect1').html("Affect vector: " + anchor1img_affVec)
-    $('#Affect2').html("Affect vector: " + anchor2img_affVec)
+    $('#Affect1').html(" <br> <br> Affect vector: " + anchor1img_affVec)
+    $('#Affect2').html(" <br> <br> Affect vector: " + anchor2img_affVec)
 
 
     /*
@@ -122,8 +126,8 @@ $(document).ready(function() {
 
     function getGradientBlends(anchor1img_affVec, anchor2img_affVec){
 
-        weight = [.8,.7,.5,.3,.2]
-        opp_weight = [.2,.3,.5,.7,.8]
+        weight = [.8,.7,.6,.5,.4,.3,.2]
+        opp_weight = [.2,.3,.4,.5,.6,.7,.8]
 
         //array of arrays of gradient blends
         gradient_blends = []
@@ -131,7 +135,7 @@ $(document).ready(function() {
         gradient_blend = []
 
         for(var i=0; i<weight.length; i++){
-            for (var k=0; k<5; k++){
+            for (var k=0; k<7; k++){
                 grad_piece = (weight[i] * anchor1img_affVec[k]) + (opp_weight[i] * anchor2img_affVec[k]);
                 grad_piece = grad_piece.toFixed(3);
                 gradient_blend.push(grad_piece);
@@ -164,7 +168,7 @@ $(document).ready(function() {
         image_values = []
 
         var pred_array_string = JSON.stringify(pred_array);
-        $('#gradients').text("Gradient arrays are \n" +pred_array_string)
+        //$('#gradients').text("Gradient arrays are \n" +pred_array_string)
 
         var promises = pred_array.map(getGradientImage)
 
@@ -212,25 +216,28 @@ $(document).ready(function() {
             console.log("data is", data)
 
             var img = document.createElement("img");
-            img.width = "300";
+            img.width = "270";
             img.src = "/static/imgs/images/" + data;
 
             $('#target' + i + "").append(img).css("visibility", "hidden");
         }
         //start with all the images hidden, except the middle
-        $('#target2').css("visibility", "visible");
+       $('#target3').css("visibility", "visible");
     }
 
 
     $( '#sliderValue' ).mouseup(function(){
-        $('#target0, #target1, #target2, #target3, #target4').css("visibility", "hidden");
+        $('#target0, #target1, #target2, #target3, #target4, #target5, #target6').css("visibility", "hidden");
         var slider = document.getElementById("sliderValue");
 
         if (slider.value == 0){ $("#target0").css("visibility", "visible");}
-        if (slider.value == 25){ $("#target1").css("visibility", "visible");}
-        if (slider.value == 50){ $("#target2").css("visibility", "visible");}
-        if (slider.value == 75){ $("#target3").css("visibility", "visible");}
-        if (slider.value == 100){ $("#target4").css("visibility", "visible");}
+        if (slider.value == 10){ $("#target1").css("visibility", "visible");}
+        if (slider.value == 20){ $("#target2").css("visibility", "visible");}
+        if (slider.value == 30){ $("#target3").css("visibility", "visible");}
+        if (slider.value == 40){ $("#target4").css("visibility", "visible");}
+        if (slider.value == 50){ $("#target5").css("visibility", "visible");}
+        if (slider.value == 60){ $("#target6").css("visibility", "visible");}
+
     })
 
     /*

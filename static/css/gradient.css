@@ -13,8 +13,8 @@ body {
 .grid-container
 {
   display: grid;
-  grid-template-columns: 500px 1700px 500px;
-  grid-template-rows: 600px 300px 300px;
+  grid-template-columns: 400px 2000px 400px;
+  grid-template-rows: 600px 300px 100px;
   padding: 50px;
   clear: both;
 }
@@ -29,8 +29,8 @@ body {
 
 }
 
-#target0, #target1, #target2, #target3, #target4{
-  width: 320px;
+#target0, #target1, #target2, #target3, #target4, #target5, #target6 {
+  width: 270px;
   float: left;
 }
 
@@ -40,13 +40,33 @@ body {
 }
 
 #anchor2img {
-width: 450px;
+width: 350px;
 }
 
 #anchor1img {
-width: 450px;
+width: 350px;
 }
 
+
+#moreInfo {
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 100%;
+
+}
+
+#InfoText {
+  width: 50%;
+  float: left;
+  padding-right: 50px;
+}
+
+
+#whyRepeats {
+  width: 50%;
+  float: left;
+  padding-left: 50px;
+}
 
 #randomButtonDiv {
   text-align: center;
@@ -98,7 +118,7 @@ button:hover {
 
 /* The slider itself */
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;   Override default CSS styles
   appearance: none;
   width: 60%; /* Full-width */
   height: 15px; /* Specified height */
