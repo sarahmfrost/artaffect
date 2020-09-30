@@ -14,7 +14,7 @@ body {
 {
   display: grid;
   grid-template-columns: 400px 2000px 400px;
-  grid-template-rows: 600px 300px 100px;
+  grid-template-rows: 700px 300px 100px;
   padding: 50px;
   clear: both;
 }

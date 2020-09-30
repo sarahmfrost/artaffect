@@ -20,8 +20,9 @@ save file names to another array
 0. get filepaths for images from CSV
 */
 
-
-//alert("Please increase size of your browser window for optimal experience");
+if (sessionStorage.getItem('value1') == null) {
+    alert("Please increase size of your browser window for optimal experience");
+}
 
 
 var csvFile = "../data/images.csv";
@@ -98,6 +99,13 @@ $(document).ready(function() {
 
         $(butName).prepend(x);
 
+
+
+        var image_title = randomImage.replace(/.jpg/g, "");
+        var image_title2 = image_title.replaceAll("-"," ");
+        $(butName).append("<br>" + image_title2);
+
+
         for (i=0; i < liwc_filePaths.length; i++){
             if (liwc_filePaths[i][0] == randomImage){
                 var affVec = liwc_filePaths[i].slice(1, 6);
@@ -115,9 +123,9 @@ $(document).ready(function() {
     //var anchor1img_affVec = getBeginningImage('#anchor1');
     //var anchor2img_affVec = getBeginningImage('#anchor2');
 
+    $('#anchor1').append(" <br> Affect vector: " + anchor1img_affVec);
+    $('#anchor2').append(" <br> Affect vector: " + anchor2img_affVec);
 
-    $('#Affect1').html(" <br> <br> Affect vector: " + anchor1img_affVec)
-    $('#Affect2').html(" <br> <br> Affect vector: " + anchor2img_affVec)
 
 
     /*
@@ -257,6 +265,7 @@ $(document).ready(function() {
     */
 
     $('#new_anchors').click(function(){
+        sessionStorage.setItem("value1", "1");
         location.reload();
     });
 
