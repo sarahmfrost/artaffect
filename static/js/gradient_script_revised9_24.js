@@ -213,13 +213,21 @@ $(document).ready(function() {
         for (var i=0; i<image_array.length; i++){
             var res = image_array[i].split(";");
             var data = res[0];
+            var emotion = res[1];
             console.log("data is", data)
 
             var img = document.createElement("img");
             img.width = "270";
             img.src = "/static/imgs/images/" + data;
 
+            var image_title = data.replace(/.jpg/g, "");
+            var image_title2 = image_title.replaceAll("-"," ");
+
+
             $('#target' + i + "").append(img).css("visibility", "hidden");
+            $('#target' + i + "").append("<br>" + image_title2 + "<br>" + emotion).css("visibility", "hidden");
+
+
         }
         //start with all the images hidden, except the middle
        $('#target3').css("visibility", "visible");
@@ -230,7 +238,11 @@ $(document).ready(function() {
         $('#target0, #target1, #target2, #target3, #target4, #target5, #target6').css("visibility", "hidden");
         var slider = document.getElementById("sliderValue");
 
-        if (slider.value == 0){ $("#target0").css("visibility", "visible");}
+        if (slider.value == 0){
+            $("#target0").css("visibility", "visible");
+            //$("#targetImageName").html(img.src);
+
+        }
         if (slider.value == 10){ $("#target1").css("visibility", "visible");}
         if (slider.value == 20){ $("#target2").css("visibility", "visible");}
         if (slider.value == 30){ $("#target3").css("visibility", "visible");}
