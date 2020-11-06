@@ -52,7 +52,7 @@ function LIWC_CSVToArray(path)
 }
 var liwc_filePaths = LIWC_CSVToArray(liwc_csv);
 
-
+// SF 9/24 - Changing code so that the beginning target image is not random.
 
 
 $(document).ready(function() {
@@ -94,6 +94,8 @@ $(document).ready(function() {
                 if (liwc_filePaths[i][0] == randomImage){
                     var affVec = liwc_filePaths[i].slice(1, 6);
                     console.log(randomImage + affVec);
+                    //$('#AffectBlend1').append(randomImage + " " + affVec + "<br>")
+
                 };
             };
         }
@@ -101,20 +103,35 @@ $(document).ready(function() {
         return affVec;
     };
 
-    getBeginningImage('#target');
+
+    //EDITED CODE TO DISPLAY 3 AFFECT VECTORS
+    var target_affVec = getBeginningImage('#target');
     var anchor1img_affVec = getBeginningImage('#anchor1');
     var anchor2img_affVec = getBeginningImage('#anchor2');
 
-    $('#mbutton1').click(function(){
-        getBeginningImage('#anchor1');
-        getBeginningImage('#target');
 
+    //$('#affect1').html("Affect vector: " + anchor1img_affVec)
+    //$('#affect3').html("Affect vector: " + anchor2img_affVec)
+    //$('#affect2').html("Affect vector: " + target_affVec)
+
+
+
+    $('#mbutton1').click(function(){
+        var aff1 = getBeginningImage('#anchor1');
+        var aff2 = getBeginningImage('#target');
+
+        //$('#affect1').html("Affect vector: " + aff1)
+        //$('#affect2').html("Affect vector " + aff2)
 
     });
 
     $('#mbutton2').click(function(){
-        getBeginningImage('#anchor2');
-        getBeginningImage('#target');
+        var aff1 = getBeginningImage('#anchor2');
+        var aff2 = getBeginningImage('#target');
+
+        //$('#affect3').html("Affect vector: " + aff1)
+        //$('#affect2').html("Affect vector " + aff2)
+
 
     });
 
@@ -157,7 +174,7 @@ C0 = left
         console.log('c1num', c1_num);
 
         for(var i=0; i<5; i++) {
-            imgInt = c0_num[i] + c1_num[i];
+            imgInt = (c0_num[i] + c1_num[i]);
             c0plusc1.push(imgInt);
 
         }
@@ -170,7 +187,14 @@ C0 = left
     "affiliation": c0plusc1[4]}
 
     console.log("pred is", pred);
+
+
+
+    //$('#affect2').write("affect blender help is " + c0plusc1 + "<br> ")
+
+
     return pred
+
 
     }
 
@@ -191,6 +215,10 @@ C0 = left
             console.log("new data is" + data)
             console.log("new features is" + features)
 
+            $('#AffectBlend2').append("new data is " + data + " ")
+            $('#AffectBlend2').append("new features is" + features)
+
+
             $('#myInnerDiv').empty();
             var img = document.createElement("img");
             img.src = "/static/imgs/images/" + data;
@@ -203,6 +231,10 @@ C0 = left
 
             img.id = "targetimg";
             $('#myInnerDiv').append(img);
+
+
+
+
 
         }
     })
@@ -245,6 +277,8 @@ var a=.5;
 
             a = a - .1;
             console.log("a is", a);
+            $('#affect1').html("a is this needs help" + a+ "<br> ")
+
         }
     });
 
@@ -261,7 +295,31 @@ var a=.5;
 
             a = a + .1;
             console.log("a is", a);
+            $('#affect3').append("a is this needs help" + a + "<br> ")
+
         }
 
     });
+
+
+/*From gradient_revised:
+
+$('#FLT_Left').click(function(){
+        console.log("left Feels more like this clicked")
+        });
+
+$('#FLT_Right').click(function(){
+        console.log("Right feels more like this clicked")
+        });
+
+
+$('#new_anchor_left').click(function(){
+            getBeginningImage('#anchor1');
+        });
+
+$('#new_anchor_right').click(function(){
+            getBeginningImage('#anchor2');
+        });
+*/
+
 })

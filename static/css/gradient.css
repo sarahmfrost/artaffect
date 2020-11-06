@@ -1,8 +1,6 @@
 /*gradient.css
 */
 
-
-
 body {
   background-color: #000000;
   color: black;
@@ -15,29 +13,33 @@ body {
 .grid-container
 {
   display: grid;
-  grid-template-columns: 500px 1100px 500px;
-  grid-template-rows: 600px 300px;
+  grid-template-columns: 400px 2000px 400px;
+  grid-template-rows: 700px 300px 100px;
   padding: 50px;
   clear: both;
-  /*width: 1200px;*/
-  /*margin-left: 200px;*/
 }
 
 .grid-item
 {
-/*  border: 1px solid rgba(0, 0, 0, 1.0);
-*/padding: 20px;
+  border: 1px solid white;
+  padding: 20px;
   font-size: 30px;
   text-align: center;
+  color: white;
+
 }
 
-#targetimg
-{
-    width: 400px;
-/*    margin-left: -200px;
-   margin-right: auto;
-    margin-top: 100px;
-*/}
+#target0, #target1, #target2, #target3, #target4, #target5, #target6 {
+  width: 270px;
+  float: left;
+}
+
+
+#targetImageName{
+  color:white;
+  z-index: 10;
+  margin-top: 400px;
+}
 
 #myInnerDiv {
   position: absolute;
@@ -45,13 +47,33 @@ body {
 }
 
 #anchor2img {
-height: 420px;
+width: 350px;
 }
 
 #anchor1img {
-height: 420px;
+width: 350px;
 }
 
+
+#moreInfo {
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 100%;
+
+}
+
+#InfoText {
+  width: 50%;
+  float: left;
+  padding-right: 50px;
+}
+
+
+#whyRepeats {
+  width: 50%;
+  float: left;
+  padding-left: 50px;
+}
 
 #randomButtonDiv {
   text-align: center;
@@ -67,8 +89,6 @@ height: 420px;
     margin: 0 auto;
     text-align: center;
     display: inline-block;
-/*    margin-left: 375px;
-    float: left;*/
 
 }
 
@@ -102,21 +122,23 @@ button:hover {
 
 }
 
-#anchor1but:hover {
-  cursor: pointer;
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;   Override default CSS styles
+  appearance: none;
+  width: 60%; /* Full-width */
+  height: 15px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.6; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  margin-bottom: 30px
 }
 
-#anchor2but:hover {
-  cursor: pointer;
-}
-
-#anchor1img:hover {
-  border: 4px solid #C12957;
-  border-radius: 6px;
-}
-
-#anchor2img:hover {
-  border: 4px solid #C12957;
-  border-radius: 6px;
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
 }
 
