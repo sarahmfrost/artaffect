@@ -67,7 +67,7 @@ return pred
 $(document).ready(function()
 {
 
-    $( '#angerValue,#anxietyValue,#socialValue,#positiveValue,#affiliationValue' ).mouseup(function() {
+    $( '#angerValue,#anxietyValue,#sadnessValue,#positiveValue,#affiliationValue' ).mouseup(function() {
         console.log('starting submit')
         pred = saveAffects()
     $.ajax({
