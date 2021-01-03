@@ -19,10 +19,10 @@ save file names to another array
 /*
 0. get filepaths for images from CSV
 */
-
+/*
 if (sessionStorage.getItem('value1') == null) {
     alert("Please increase size of your browser window for optimal experience");
-}
+}*/
 
 
 var csvFile = "../data/images.csv";
@@ -225,7 +225,7 @@ $(document).ready(function() {
             console.log("data is", data)
 
             var img = document.createElement("img");
-            img.width = "270";
+            img.width = "200";
             img.src = "/static/imgs/images/" + data;
 
             var image_title = data.replace(/.jpg/g, "");

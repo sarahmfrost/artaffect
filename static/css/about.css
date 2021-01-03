@@ -11,7 +11,7 @@
 
 #slider-info, #carousel-info, #gradient-info {
   width: 33%;
-  font-size: 40px;
+  font-size: 35px;
   color: white;
   display: table-cell;
   border: 2px solid white;
@@ -29,7 +29,7 @@ img {
 
 h3 {
   font-family: Didot, "Didot LT STD";
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   padding-left: 30px;
   text-align: left;

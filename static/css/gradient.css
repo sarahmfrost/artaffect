@@ -7,16 +7,20 @@ body {
   font-size: 40px;
   text-align: center;
   width: 100%;
+  box-sizing: border-box;
 }
 
 
 .grid-container
 {
   display: grid;
-  grid-template-columns: 400px 2000px 400px;
-  grid-template-rows: 700px 300px 100px;
+  /*grid-template-columns: 400px 2000px 400px; 14% 71% 14%
+  grid-auto-columns: 14% 71% 14%;*/
+  grid-template-columns: 14fr 71fr 14fr;
+  grid-auto-rows: 40fr;
   padding: 50px;
   clear: both;
+  float: left;
 }
 
 .grid-item
@@ -26,15 +30,23 @@ body {
   font-size: 30px;
   text-align: center;
   color: white;
+  float: left;
 
 }
 
 #target0, #target1, #target2, #target3, #target4, #target5, #target6 {
-  width: 270px;
+  /*width: 270px; 10 percent*/
+  grid-auto-columns: 10fr;
+  max-width: 240px;
   float: left;
 }
 
-
+/*
+img{
+        max-width: 10fr;
+        max-height: 1;
+}
+*/
 #targetImageName{
   color:white;
   z-index: 10;
