@@ -80,11 +80,51 @@ function LIWC_CSVToArray(path)
 var liwc_filePaths = LIWC_CSVToArray(liwc_csv);
 
 
-$(document).ready(function() {
+
+function getCuratedImages(){
+
+
+        curated_images = [['the-man-from-bantul-the-final-round-2000.jpg',
+        'samson-tearing-the-lion-s-mouth-1.jpg'],
+        ["beggars-fighting-1634.jpg",
+        "cossack-fighting-off-a-tiger-1811.jpg"]];
+
+        var randomNumber = Math.floor(Math.random() * curated_images.length);
+        curatedPair = curated_images[randomNumber];
+        console.log('curated pair is', curatedPair)
+
+        $('#anchor1but').empty();
+        $('#anchor2but').empty();
+
+
+
+
+        var x = document.createElement('img');
+        x.src = '../imgs/images/' + randomImage;
+
+        var divName = divID.replace("#","");
+        x.setAttribute('id', divName+ 'img');
+
+        $(butName).prepend(x);
+
+
+        var image_title = randomImage.replace(/.jpg/g, "");
+        var image_title2 = image_title.replaceAll("-"," ");
+        $(butName).append("<br>" + image_title2);
+
+
+        for (i=0; i < liwc_filePaths.length; i++){
+            if (liwc_filePaths[i][0] == randomImage){
+                var affVec = liwc_filePaths[i].slice(1, 6);
+            };
+        };
+        return affVec;
+    };
+
     /*
     1. Function to get two random anchor images
     */
-    function getBeginningImage(divID){
+function getBeginningImage(divID){
         filePaths = readCSVToArray(csvFile);
         var randomNumber = Math.floor(Math.random() * filePaths.length);
         randomImage = filePaths[randomNumber];
@@ -114,14 +154,12 @@ $(document).ready(function() {
         return affVec;
     };
 
-    var anchor1img_affVec = getBeginningImage('#anchor1');
-    var anchor2img_affVec = getBeginningImage('#anchor2');
+$(document).ready(function() {
 
 
-    //EDITED CODE TO DISPLAY 3 AFFECT VECTORS
-    //var target_affVec = getBeginningImage('#target');
-    //var anchor1img_affVec = getBeginningImage('#anchor1');
-    //var anchor2img_affVec = getBeginningImage('#anchor2');
+    var anchor1img_affVec = getCuratedImages('#anchor1');
+    var anchor2img_affVec = getCuratedImages('#anchor2');
+
 
     $('#anchor1').append(" <br> Affect vector: " + anchor1img_affVec);
     $('#anchor2').append(" <br> Affect vector: " + anchor2img_affVec);
@@ -261,12 +299,34 @@ $(document).ready(function() {
     })
 
     /*
-    4b. set up "refresh anchors" button
+    4b. set up "refresh random anchors" and "curated anchors" buttons
     */
 
     $('#new_anchors').click(function(){
-        sessionStorage.setItem("value1", "1");
+/*        sessionStorage.setItem("value1", "1");
+        location.reload();*/
+        var anchor1img_affVec = getBeginningImage('#anchor1');
+        var anchor2img_affVec = getBeginningImage('#anchor2');
+
+
+        $('#anchor1').append(" <br> Affect vector: " + anchor1img_affVec);
+        $('#anchor2').append(" <br> Affect vector: " + anchor2img_affVec);
+
+
+    });
+
+    $('#new_curated_anchors').click(function(){
+/*        sessionStorage.setItem("value1", "1");
+        location.reload();*/
         location.reload();
+        var anchor1img_affVec = getCuratedImages('#anchor1');
+        var anchor2img_affVec = getCuratedImages('#anchor2');
+
+
+        $('#anchor1').append(" <br> Affect vector: " + anchor1img_affVec);
+        $('#anchor2').append(" <br> Affect vector: " + anchor2img_affVec);
+
+
     });
 
 })
