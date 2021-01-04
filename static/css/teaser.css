@@ -1,0 +1,46 @@
+/*teaser.css
+*/
+
+body {
+  background-color: #000000;
+  color: black;
+  font-size: 40px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.grid-container
+{
+  width: 100%;
+
+  display: grid;
+  /*grid-template-columns: 400px 2000px 400px; 14% 71% 14%
+  grid-auto-columns: 14% 71% 14%;*/
+  grid-template-columns: 25fr 25fr 25fr 25fr;
+  grid-template-rows: : 25fr 25fr 25fr 25fr;
+
+  padding: 50px;
+  clear: both;
+  float: left;
+    border: 1px solid white;
+
+}
+
+
+.grid-item
+{
+  border: 1px solid white;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  float: left;
+
+}
+
+
+img {
+  max-width: 100%;
+}
