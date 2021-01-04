@@ -83,7 +83,6 @@ var liwc_filePaths = LIWC_CSVToArray(liwc_csv);
 
 function getCuratedImages(){
 
-
         curated_images = [['the-man-from-bantul-the-final-round-2000.jpg',
         'samson-tearing-the-lion-s-mouth-1.jpg'],
         ["beggars-fighting-1634.jpg",
@@ -97,52 +96,79 @@ function getCuratedImages(){
         $('#anchor2but').empty();
 
 
+        leftImg = curatedPair[0];
+        rightImg = curatedPair[1];
+
+        let x1 = document.createElement('img');
+        x1.src = '../imgs/images/' + leftImg;
+
+        let x2 = document.createElement('img');
+        x2.src = '../imgs/images/' + rightImg;
 
 
-        var x = document.createElement('img');
-        x.src = '../imgs/images/' + randomImage;
-
-        var divName = divID.replace("#","");
-        x.setAttribute('id', divName+ 'img');
-
-        $(butName).prepend(x);
+        x1.setAttribute('id', 'anchor1img');
+        x2.setAttribute('id', 'anchor2img');
 
 
-        var image_title = randomImage.replace(/.jpg/g, "");
-        var image_title2 = image_title.replaceAll("-"," ");
-        $(butName).append("<br>" + image_title2);
+        $('#anchor1but').prepend(x1);
+        $('#anchor2but').prepend(x2);
+
+
+        let left_image_title = leftImg.replace(/.jpg/g, "");
+        let left_image_title2 = left_image_title.replaceAll("-"," ");
+        $('#anchor1but').append("<br>" + left_image_title2);
 
 
         for (i=0; i < liwc_filePaths.length; i++){
-            if (liwc_filePaths[i][0] == randomImage){
+            if (liwc_filePaths[i][0] == leftImg){
                 var affVec = liwc_filePaths[i].slice(1, 6);
+                $('#anchor1but').append("<br>" + affVec);
+
             };
         };
-        return affVec;
+
+
+        let right_image_title = rightImg.replace(/.jpg/g, "");
+        let right_image_title2 = right_image_title.replaceAll("-"," ");
+        $('#anchor2but').append("<br>" + right_image_title2);
+
+
+        for (i=0; i < liwc_filePaths.length; i++){
+            if (liwc_filePaths[i][0] == rightImg){
+                var affVec2 = liwc_filePaths[i].slice(1, 6);
+                $('#anchor2but').append("<br>" + affVec2);
+
+            };
+        };
+        console.log("affvec2", affVec2);
+        return [affVec, affVec2];
     };
 
     /*
     1. Function to get two random anchor images
     */
 function getBeginningImage(divID){
+        //$('#anchor1but').empty();
+        //$('#anchor2but').empty();
+
         filePaths = readCSVToArray(csvFile);
-        var randomNumber = Math.floor(Math.random() * filePaths.length);
+        let randomNumber = Math.floor(Math.random() * filePaths.length);
         randomImage = filePaths[randomNumber];
 
-        var butName = divID + 'but';
+        let butName = divID + 'but';
         $(butName).empty();
-        var x = document.createElement('img');
+        let x = document.createElement('img');
         x.src = '../imgs/images/' + randomImage;
 
-        var divName = divID.replace("#","");
+        let divName = divID.replace("#","");
         x.setAttribute('id', divName+ 'img');
 
         $(butName).prepend(x);
 
 
 
-        var image_title = randomImage.replace(/.jpg/g, "");
-        var image_title2 = image_title.replaceAll("-"," ");
+        let image_title = randomImage.replace(/.jpg/g, "");
+        let image_title2 = image_title.replaceAll("-"," ");
         $(butName).append("<br>" + image_title2);
 
 
@@ -151,22 +177,11 @@ function getBeginningImage(divID){
                 var affVec = liwc_filePaths[i].slice(1, 6);
             };
         };
+        $(butName).append(" <br> Affect vector: " + affVec);
         return affVec;
     };
 
-$(document).ready(function() {
-
-
-    var anchor1img_affVec = getCuratedImages('#anchor1');
-    var anchor2img_affVec = getCuratedImages('#anchor2');
-
-
-    $('#anchor1').append(" <br> Affect vector: " + anchor1img_affVec);
-    $('#anchor2').append(" <br> Affect vector: " + anchor2img_affVec);
-
-
-
-    /*
+        /*
     2. get all gradient blends between two anchor images and save to array
     */
 
@@ -180,8 +195,8 @@ $(document).ready(function() {
         // array of affects for one gradient blend
         gradient_blend = []
 
-        for(var i=0; i<weight.length; i++){
-            for (var k=0; k<7; k++){
+        for(let i=0; i<weight.length; i++){
+            for (let k=0; k<7; k++){
                 grad_piece = (weight[i] * anchor1img_affVec[k]) + (opp_weight[i] * anchor2img_affVec[k]);
                 grad_piece = grad_piece.toFixed(3);
                 gradient_blend.push(grad_piece);
@@ -193,9 +208,7 @@ $(document).ready(function() {
         return gradient_blends;
     }
 
-    gradient_blends = getGradientBlends(anchor1img_affVec, anchor2img_affVec)
-
-    /*
+/*
     3. run lookup function for all gradient blends, ensure there are no duplicates,
     save file names to another array
     */
@@ -204,19 +217,21 @@ $(document).ready(function() {
     pred_array = []
 
     function getGradientImages(gradient_blends){
-        for(var i=0; i<gradient_blends.length; i++){
-            var pred = {"positive": Number(gradient_blends[i][0]), "anxiety": Number(gradient_blends[i][1]), "anger": Number(gradient_blends[i][2]),
+        pred_array = [];
+        for(let i=0; i<gradient_blends.length; i++){
+            let pred = {"positive": Number(gradient_blends[i][0]), "anxiety": Number(gradient_blends[i][1]), "anger": Number(gradient_blends[i][2]),
             "sad": Number(gradient_blends[i][3]), "affiliation": Number(gradient_blends[i][4])}
             pred_array.push(pred);
-            pred = {}
+            pred = {};
         }
 
         image_values = []
 
-        var pred_array_string = JSON.stringify(pred_array);
+        let pred_array_string = JSON.stringify(pred_array);
+
         //$('#gradients').text("Gradient arrays are \n" +pred_array_string)
 
-        var promises = pred_array.map(getGradientImage)
+        let promises = pred_array.map(getGradientImage)
 
         return Promise.allSettled(promises)
             .then(
@@ -247,27 +262,29 @@ $(document).ready(function() {
       })
     }
 
-    getGradientImages(gradient_blends)
-    .then(result => {showImages(result)})
-
     /*
     4a. Build slider to show/hide gradient images
     */
 
     function showImages(image_array) {
-        //console.log(image_array);
-        for (var i=0; i<image_array.length; i++){
-            var res = image_array[i].split(";");
-            var data = res[0];
-            var emotion = res[1];
-            console.log("data is", data)
+        console.log(image_array);
+        $('#target0, #target1, #target2, #target3, #target4, #target5, #target6').empty();
+        console.log(image_array);
 
-            var img = document.createElement("img");
+        for (let i=0; i<image_array.length; i++){  //change to the last 7 items
+            console.log(image_array.length);
+            let res = image_array[i].split(";");
+            let data = res[0];
+            let emotion = res[1];
+            //console.log("data is", data);
+
+            let img = document.createElement("img");
             img.width = "200";
             img.src = "/static/imgs/images/" + data;
+            //console.log(img.src);
 
-            var image_title = data.replace(/.jpg/g, "");
-            var image_title2 = image_title.replaceAll("-"," ");
+            let image_title = data.replace(/.jpg/g, "");
+            let image_title2 = image_title.replaceAll("-"," ");
 
 
             $('#target' + i + "").append(img).css("visibility", "hidden");
@@ -282,7 +299,7 @@ $(document).ready(function() {
 
     $( '#sliderValue' ).mouseup(function(){
         $('#target0, #target1, #target2, #target3, #target4, #target5, #target6').css("visibility", "hidden");
-        var slider = document.getElementById("sliderValue");
+        let slider = document.getElementById("sliderValue");
 
         if (slider.value == 0){
             $("#target0").css("visibility", "visible");
@@ -298,34 +315,49 @@ $(document).ready(function() {
 
     })
 
+
+$(document).ready(function() {
+
+    let names = getCuratedImages();
+
+    let twoanchor1img_affVec = names[0], twoanchor2img_affVec = names[1];
+
+
+    gradient_blends = getGradientBlends(twoanchor1img_affVec, twoanchor2img_affVec);
+
+
+    getGradientImages(gradient_blends)
+    .then(result => {showImages(result)})
+
     /*
     4b. set up "refresh random anchors" and "curated anchors" buttons
     */
 
     $('#new_anchors').click(function(){
-/*        sessionStorage.setItem("value1", "1");
-        location.reload();*/
-        var anchor1img_affVec = getBeginningImage('#anchor1');
-        var anchor2img_affVec = getBeginningImage('#anchor2');
 
 
-        $('#anchor1').append(" <br> Affect vector: " + anchor1img_affVec);
-        $('#anchor2').append(" <br> Affect vector: " + anchor2img_affVec);
+/*        sessionStorage.setItem("value1", "1");*/
+        let anchor1img_affVec = getBeginningImage('#anchor1');
+        let anchor2img_affVec = getBeginningImage('#anchor2');
 
+        gradient_blends = getGradientBlends(anchor1img_affVec, anchor2img_affVec);
 
+        getGradientImages(gradient_blends)
+        .then(result => {showImages(result)})
     });
 
     $('#new_curated_anchors').click(function(){
-/*        sessionStorage.setItem("value1", "1");
-        location.reload();*/
-        location.reload();
-        var anchor1img_affVec = getCuratedImages('#anchor1');
-        var anchor2img_affVec = getCuratedImages('#anchor2');
+
+        let names = getCuratedImages();
+
+        let twoanchor1img_affVec = names[0], twoanchor2img_affVec = names[1];
 
 
-        $('#anchor1').append(" <br> Affect vector: " + anchor1img_affVec);
-        $('#anchor2').append(" <br> Affect vector: " + anchor2img_affVec);
+        gradient_blends = getGradientBlends(twoanchor1img_affVec, twoanchor2img_affVec);
 
+
+        getGradientImages(gradient_blends)
+        .then(result => {showImages(result)})
 
     });
 
