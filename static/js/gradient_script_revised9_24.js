@@ -83,10 +83,14 @@ var liwc_filePaths = LIWC_CSVToArray(liwc_csv);
 
 function getCuratedImages(){
 
-        curated_images = [['the-man-from-bantul-the-final-round-2000.jpg',
-        'samson-tearing-the-lion-s-mouth-1.jpg'],
-        ["beggars-fighting-1634.jpg",
-        "cossack-fighting-off-a-tiger-1811.jpg"]];
+        curated_images = [['stormy-seashore-with-ruined-temple-shipwreck-and-figures-1747.jpg','the-lovers-1974.jpg'], ['john-philip-kemble-1757-1823-as-richard-in-richard-iii-by-william-shakespeare-1788.jpg','atocha-1964.jpg'],
+['the-shipwreck.jpg', 'the-kiss-1976.jpg'], ['m-quina-de-coser-electro-sexual-1934.jpg','quentin-metsys-madonna-col-bambino-1510-25-ca-01.JPG'], ['et-in-arcadia-ego-1622.jpg','eine-art-nebeneinander-1996.jpg'],
+['procession-in-toledo.jpg', 'christian-allegory-1515.jpg'], ['rape-of-tamar-1640.jpg', 'four-hearts-1969.jpg'], ['horse-frightened-by-a-storm-1824(1).jpg', 'in-bed-1893.jpg'],
+['orfeu-nos-infernos-1904.jpg', 'bassin-du-luxembourg-1930.jpg'], ["madonna-litta-madonna-and-the-child.jpg", 'samson-tearing-the-lion-s-mouth-1.jpg'],
+["a-winter-s-tale-act-iv-scene-3-the-shepherd-s-cot-1787.jpg","beggars-fighting-1634.jpg"], ["the-virgin-spanking-the-christ-child-before-three-witnesses-andre-breton-paul-eluard-and-the-1926.jpg","benjamin-and-eleanor-ridgley-laming-1788.jpg"],
+["psyche-showing-her-sisters-her-gifts-from-cupid-1753.jpg",'venus-punishing-profane-love-1595.jpg'], ["africa.jpg","the-battle-of-culloden-1746.jpg"],
+["hip-hip-hurrah-1888.jpg", 'hercules-fighting-with-the-lernaean-hydra-1634.jpg'], ["the-major-s-marriage-proposal-1851.jpg", 'the-family-1909.jpg']];
+
 
         var randomNumber = Math.floor(Math.random() * curated_images.length);
         curatedPair = curated_images[randomNumber];
