@@ -19,20 +19,20 @@ body {
   /*grid-template-columns: 400px 2000px 400px; 14% 71% 14%
   grid-auto-columns: 14% 71% 14%;*/
   grid-template-columns: 25fr 25fr 25fr 25fr;
-  grid-template-rows: : 25fr 25fr 25fr 25fr;
-
+/*  grid-template-rows: : 10fr 25fr;
+*/
   padding: 50px;
   clear: both;
   float: left;
-    border: 1px solid white;
-
+/*  border: 1px solid white;
+*/
 }
 
 
 .grid-item
 {
-  border: 1px solid white;
-  padding: 20px;
+/*  border: 1px solid white;
+*/  padding: 20px;
   font-size: 30px;
   text-align: center;
   color: white;
@@ -42,5 +42,109 @@ body {
 
 
 img {
-  max-width: 100%;
+  max-width: 90%;
+}
+
+/*
+#element1{
+animation:5s ease 0s normal forwards 0 fadein;
+-webkit-animation:5s ease 0s normal forwards 0 fadein;
+opacity:1;
+animation:5s ease 0s normal forwards 1 fadeout;
+-webkit-animation:5s ease 0s normal forwards 1 fadeout;
+opacity:0;
+}
+
+#element2{
+animation:1s ease 0s normal forwards 1 fadein;
+-webkit-animation:1s ease 0s normal forwards 1 fadein;
+opacity:1
+}
+
+@keyframes fadein{
+    0%{opacity:0}
+    80%{opacity:0}
+    100%{opacity:1}
+}
+
+@-webkit-keyframes fadein{
+    0%{opacity:0}
+    80%{opacity:0}
+    100%{opacity:1}
+}
+@keyframes fadeout{
+    0%{opacity:1}
+    80%{opacity:1}
+    100%{opacity:0}
+}
+
+@-webkit-keyframes fadeout{
+    0%{opacity:1}
+    80%{opacity:1}
+    100%{opacity:0}
+}*/
+
+#element1 {
+  opacity: 0;
+  animation: pulse 7s ease 1s;
+  animation-fill-mode: forwards;
+}
+
+#element4 {
+  opacity: 0;
+  animation: pulse 7s ease 7s;
+  animation-fill-mode: forwards;
+}
+
+#element6 {
+  opacity: 0;
+  animation: pulse 7s ease 14s;
+  animation-fill-mode: forwards;
+}
+
+#element3 {
+  opacity: 0;
+  animation: pulse 7s ease 21s;
+  animation-fill-mode: forwards;
+}
+
+#element5 {
+  opacity: 0;
+  animation: pulse 7s ease 28s;
+  animation-fill-mode: forwards;
+}
+#element8 {
+  opacity: 0;
+  animation: pulse 7s ease 35s;
+  animation-fill-mode: forwards;
+}
+#element2 {
+  opacity: 0;
+  animation: pulse 7s ease 42s;
+  animation-fill-mode: forwards;
+}
+
+#element7 {
+  opacity: 0;
+  animation: pulse 7s ease 49s;
+  animation-fill-mode: forwards;
+}
+
+#enterbutton {
+  opacity: 0;
+  animation: pulse 10s ease 56s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
