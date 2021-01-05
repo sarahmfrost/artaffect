@@ -7,6 +7,7 @@ body {
   font-size: 40px;
   text-align: center;
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -45,44 +46,6 @@ img {
   max-width: 90%;
 }
 
-/*
-#element1{
-animation:5s ease 0s normal forwards 0 fadein;
--webkit-animation:5s ease 0s normal forwards 0 fadein;
-opacity:1;
-animation:5s ease 0s normal forwards 1 fadeout;
--webkit-animation:5s ease 0s normal forwards 1 fadeout;
-opacity:0;
-}
-
-#element2{
-animation:1s ease 0s normal forwards 1 fadein;
--webkit-animation:1s ease 0s normal forwards 1 fadein;
-opacity:1
-}
-
-@keyframes fadein{
-    0%{opacity:0}
-    80%{opacity:0}
-    100%{opacity:1}
-}
-
-@-webkit-keyframes fadein{
-    0%{opacity:0}
-    80%{opacity:0}
-    100%{opacity:1}
-}
-@keyframes fadeout{
-    0%{opacity:1}
-    80%{opacity:1}
-    100%{opacity:0}
-}
-
-@-webkit-keyframes fadeout{
-    0%{opacity:1}
-    80%{opacity:1}
-    100%{opacity:0}
-}*/
 
 #element1 {
   opacity: 0;
@@ -131,9 +94,40 @@ opacity:1
 }
 
 #enterbutton {
-  opacity: 0;
-  animation: pulse 10s ease 56s;
-  animation-fill-mode: forwards;
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  animation:5s ease 5s normal forwards 1 fadein;
+  -webkit-animation:1s ease 5s normal forwards 1 fadein;
+  opacity:0;
+    font-family: Didot, "Didot LT STD" !important;
+    color: white;
+    background: transparent;
+    border: 2px solid #C12957;
+    padding-bottom: 7px;
+    border-radius: 10px;
+    font-size: 40px;
+    margin: 10 auto;
+    text-align: center;
+}
+
+#enterbutton:hover {
+      background-color: #C12957;
+      color: white;
+      cursor: pointer;
+}
+
+
+
+@keyframes fadein{from{opacity:0}
+to{opacity:1}
+}
+
+@-webkit-keyframes fadein{from{opacity:0}
+to{opacity:1}
 }
 
 @keyframes pulse {
