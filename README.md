@@ -1,6 +1,6 @@
 # ArtAffect
 
-## Sarah Frost, Dr. Angus G. Forbes, Dr. Daniel Shapiro
+## Sarah Frost, Ruben Calderon, Dr. Angus G. Forbes, Dr. Daniel Shapiro
 
 ### Computational Media Department, University of California, Santa Cruz
 
