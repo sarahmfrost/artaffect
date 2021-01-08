@@ -30,7 +30,7 @@
 
     <div class="grid-container">
 <!--         First row begins  -->
-      <div id = "anchor1" class="grid-item">
+      <div id = "anchor1" class="grid-item"> Emotion:
         <div id ="anchor1but"></div>
       </div>
       <div class="grid-item">
@@ -44,7 +44,7 @@
 
         <div id = "targetImageName"></div>
       </div>
-      <div id = "anchor2" class="grid-item">
+      <div id = "anchor2" class="grid-item"> Emotion:
         <div id = "anchor2but"></div>
       </div>
     </div>
@@ -54,9 +54,9 @@
           <p style="color:white"> Explore the emotional space between two images:</p>
           <input id="sliderValue" type="range" min="0" max="60" value="30" step="10" class="slider">
           <br><br>
-          <button id="new_anchors">
+<!--           <button id="new_anchors">
             <img src = "../imgs/refresh_white.png" height = "40"> Try again with new random images
-          </button>
+          </button> -->
             <button id="new_curated_anchors">
             <img src = "../imgs/refresh_white.png" height = "40"> Try again with new curated images
           </button>
@@ -65,21 +65,21 @@
 
 
 
-    <div id="moreInfo">
+<!--     <div id="moreInfo">
       <div id="InfoText">
         <h2>
         how does this work? </br></br>
 
         This interaction method is a progression illustrating incremental movement between two anchor images. The page contains a result image between two anchor images arranged in a line, and controls for feels- more-like-this (accessed by moving the slider). Moving the slider increments or decrements a coefficient, which we use to interpolate between the affect vectors associated with the anchors. To explore the affective space that the two anchor images span, we index the resulting affect vector into the database and display the retrieved image at a position interpolated between the anchors. As a result, the physical position of the target image encodes the relative similarity of its affect to the affect of the two anchors.
         </h2></br></br>
-      </div>
-      <div id = "whyRepeats">
+      </div> -->
+<!--       <div id = "whyRepeats">
         <h2>
         why am I seeing repeated images? </br></br>
 
         If two anchor images have a similar emotional affect, there is less emotion space between the two images. This can lead to repeated images in the gradient. Please click "Try Again with New Images" to see the gradient between two new images in our database of 4000 images.
         </h2></br></br>
-      </div>
+      </div> -->
 
     </div>
 
