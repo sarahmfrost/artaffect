@@ -126,7 +126,7 @@ function getCuratedImages(){
         for (i=0; i < liwc_filePaths.length; i++){
             if (liwc_filePaths[i][0] == leftImg){
                 var affVec = liwc_filePaths[i].slice(1, 6);
-                $('#anchor1but').append("<br>" + affVec);
+                //$('#anchor1but').append("<br>" + affVec);
 
             };
         };
@@ -140,7 +140,7 @@ function getCuratedImages(){
         for (i=0; i < liwc_filePaths.length; i++){
             if (liwc_filePaths[i][0] == rightImg){
                 var affVec2 = liwc_filePaths[i].slice(1, 6);
-                $('#anchor2but').append("<br>" + affVec2);
+                //$('#anchor2but').append("<br>" + affVec2);
 
             };
         };
@@ -290,9 +290,9 @@ function getBeginningImage(divID){
             let image_title = data.replace(/.jpg/g, "");
             let image_title2 = image_title.replaceAll("-"," ");
 
-
+            //+ "<br>" + emotion
             $('#target' + i + "").append(img).css("visibility", "hidden");
-            $('#target' + i + "").append("<br>" + image_title2 + "<br>" + emotion).css("visibility", "hidden");
+            $('#target' + i + "").append("<br>" + image_title2).css("visibility", "hidden");
 
 
         }

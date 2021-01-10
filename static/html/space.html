@@ -42,6 +42,18 @@
 </head>
 
 <body>
+
+     <header><a id ="homeButton" href="/static/html/about.html">ArtAffect</a></header>
+
+
+        <h2>
+      <a id="navLink" href="/static/html/space.html">Galaxy</a>
+
+      <a id="navLink" href="/static/html/gradient.html">Gradient</a>
+      <a id="navLink" href="/static/html/sliders.html">Sliders</a>
+    </h2>
+
+        <br> <br> <br>
     <!--Cite: https://github.com/vasturiano/3d-force-graph-->
   <div id="3d-graph"></div>
 
@@ -121,10 +133,10 @@
           sad2         = sad - sad1
           affiliation2 = affiliation - affiliation1
 
-          real_distance = Math.sqrt(Math.pow(posemo2, 2) + 
-                                Math.pow(anx2, 2) + 
-                                Math.pow(anger2, 2) + 
-                                Math.pow(sad2, 2) + 
+          real_distance = Math.sqrt(Math.pow(posemo2, 2) +
+                                Math.pow(anx2, 2) +
+                                Math.pow(anger2, 2) +
+                                Math.pow(sad2, 2) +
                                 Math.pow(affiliation2, 2))
 
 
@@ -156,7 +168,7 @@
     }
 
 
-    // Connected graph 
+    // Connected graph
     const gData = {
       nodes: imgs.map((img, id) => ({ id, img })),
       links: find_targets()
@@ -165,7 +177,7 @@
     elem = document.getElementById('3d-graph')
     const Graph = ForceGraph3D()
       (elem)
-      
+
         .nodeThreeObject(({ img }) => {
             const imgTexture = new THREE.TextureLoader().load(`../imgs/images/${img}`);
             const material = new THREE.SpriteMaterial({ map: imgTexture });

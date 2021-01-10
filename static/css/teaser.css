@@ -100,8 +100,8 @@ img {
   left: 50%;
   margin-top: -50px;
   margin-left: -100px;
-  animation:5s ease 5s normal forwards 1 fadein;
-  -webkit-animation:1s ease 5s normal forwards 1 fadein;
+  animation:10s ease 10s normal forwards 1 fadein;
+  -webkit-animation:10s ease 10s normal forwards 1 fadein;
   opacity:0;
     font-family: Didot, "Didot LT STD" !important;
     color: white;
