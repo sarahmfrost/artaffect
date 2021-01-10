@@ -26,6 +26,17 @@ h2 {
   color: white;
 }
 
+#homeButton {
+  text-align: center;
+  font-family: Didot, "Didot LT STD";
+  font-size: 55px;
+  color: white;
+}
+
+#homeButton:hover {
+  font-style: underline;
+}
+
 
 #navLink {
   font-family: Didot, "Didot LT STD";
