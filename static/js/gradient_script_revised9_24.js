@@ -126,7 +126,13 @@ function getCuratedImages(){
         for (i=0; i < liwc_filePaths.length; i++){
             if (liwc_filePaths[i][0] == leftImg){
                 var affVec = liwc_filePaths[i].slice(1, 6);
-                //$('#anchor1but').append("<br>" + affVec);
+                var highest = Object.keys(affVec).reduce(function(a, b){ return affVec[a] > affVec[b] ? a : b });
+                if(highest == "0"){emo = "High Happiness"}
+                if(highest == "1"){emo = "High Anxiety"}
+                if(highest == "2"){emo = "High Anger"}
+                if(highest == "3"){emo = "High Sadness"}
+                if(highest == "4"){emo = "High Love"}
+                $('#anchor1but').prepend("Emotion: " + emo);
 
             };
         };
@@ -140,6 +146,13 @@ function getCuratedImages(){
         for (i=0; i < liwc_filePaths.length; i++){
             if (liwc_filePaths[i][0] == rightImg){
                 var affVec2 = liwc_filePaths[i].slice(1, 6);
+                var highest2 = Object.keys(affVec2).reduce(function(a, b){ return affVec2[a] > affVec2[b] ? a : b });
+                if(highest2 == "0"){emo2 = "High Happiness"}
+                if(highest2 == "1"){emo2 = "High Anxiety"}
+                if(highest2 == "2"){emo2 = "High Anger"}
+                if(highest2 == "3"){emo2 = "High Sadness"}
+                if(highest2 == "4"){emo2 = "High Love"}
+                $('#anchor2but').prepend("Emotion: " + emo2);
                 //$('#anchor2but').append("<br>" + affVec2);
 
             };
