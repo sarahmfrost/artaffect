@@ -365,6 +365,9 @@ $(document).ready(function() {
 
     $('#new_curated_anchors').click(function(){
 
+        let slider = document.getElementById("sliderValue");
+        slider.value = 30;
+
         let names = getCuratedImages();
 
         let twoanchor1img_affVec = names[0], twoanchor2img_affVec = names[1];
