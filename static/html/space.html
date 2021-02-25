@@ -136,17 +136,10 @@
           sad2         = sad - sad1
           affiliation2 = affiliation - affiliation1
 
-<<<<<<< HEAD
-          real_distance = Math.sqrt(Math.pow(posemo2, 2) + 
-                                Math.pow(anx2, 2) + 
-                                Math.pow(anger2, 2) + 
-                                Math.pow(sad2, 2) + 
-=======
           real_distance = Math.sqrt(Math.pow(posemo2, 2) +
                                 Math.pow(anx2, 2) +
                                 Math.pow(anger2, 2) +
                                 Math.pow(sad2, 2) +
->>>>>>> 67713a68cb92fa8dce47a0aefa9c2e67924900d1
                                 Math.pow(affiliation2, 2))
 
 
@@ -178,11 +171,7 @@
     }
 
 
-<<<<<<< HEAD
-    // Connected graph 
-=======
     // Connected graph
->>>>>>> 67713a68cb92fa8dce47a0aefa9c2e67924900d1
     const gData = {
       nodes: imgs.map((img, id) => ({ id, img })),
       links: find_targets()
@@ -191,11 +180,6 @@
     elem = document.getElementById('3d-graph')
     const Graph = ForceGraph3D()
       (elem)
-<<<<<<< HEAD
-      
-=======
-
->>>>>>> 67713a68cb92fa8dce47a0aefa9c2e67924900d1
         .nodeThreeObject(({ img }) => {
             const imgTexture = new THREE.TextureLoader().load(`../imgs/images/${img}`);
             const material = new THREE.SpriteMaterial({ map: imgTexture });
@@ -223,8 +207,4 @@
         });
 
   </script>
-<<<<<<< HEAD
 </body>
-=======
-</body>
->>>>>>> 67713a68cb92fa8dce47a0aefa9c2e67924900d1
