@@ -15,80 +15,40 @@
 
  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
 
- <link href="{{url_for('static', filename='css/about.css')}}" rel="stylesheet">
-
+ <link href="{{url_for('static', filename='css/teaser.css')}}" rel="stylesheet">
 
 
 <link rel="shortcut icon" type="image/png" href="{{url_for('static', filename='imgs/palette.png')}}"/>
 
-<script src="{{url_for('static', filename='js/functions.js')}}"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"  crossorigin="anonymous"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
-
-<!--
-<style>
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;500&display=swap');
-</style> -->
-
 
    </head>
 
 
 
 <body>
-    <header>ArtAffect</header>
 
-<!--     <h3>
-    <a id="navLink_2" href="/static/html/index_i2a.html">Image to Affect</a>
+    <div class="grid-container">
+  <div class='grid-item' id='element1'><img src="/static/imgs/introImages/dante-and-virgil-in-hell-1850.jpg"></div>
+  <div class='grid-item' id="element2"><img src="/static/imgs/introImages/fisher-boy-1632.jpg"></div>
+  <div class='grid-item'> <br><br><br><img id="element3" src="/static/imgs/introImages/drowning-girl-1963(1).jpg"></div>
+   <div class='grid-item' id="element4"><img src="/static/imgs/introImages/kiss-1897.jpg"></div>
+   <div class='grid-item' id="element5"><img src="/static/imgs/introImages/democritus.jpg"></div>
+   <div class='grid-item'><img id="element6" src="/static/imgs/introImages/girl-with-peaches-1887.jpg"></div>
+   <div class='grid-item' id="element7"><img src="/static/imgs/introImages/lichtkreise-kosmischer-regenbogen-1922.jpg"></div>
+   <div class='grid-item' id="element8"><img src="/static/imgs/introImages/golden-head-1986.jpg"></div>
+    </div>
 
-    </h3> -->
+<button id ='enterbutton'> BEGIN </button>
+
+<script type="text/javascript">
+    document.getElementById("enterbutton").onclick = function () {
+        location.href="{{url_for('static', filename='html/about.html')}}";
+    };
+</script>
 
 
-    <h2>
-    <a id="navLink" href="/static/html/sliders.html">Sliders</a>
-    <a id="navLink" href="../static/html/carousel.html">Carousel  </a>
-    <a id="navLink" href="../static/html/gradient.html">Gradient  </a>
-    <a id="navLink" href="/static/html/visual.html">Visual</a>
-    </h2>
-
-        <br> <br> <br>
-
-        <div id="welcome"> WELCOME  </div>
-
-        <div id="about-text">
-
-            ArtAffect is an interactive web application that creates a novel engagement with art collections. In contrast with presentations that organize art by genre, medium, or style, ArtAffect lets users visually organize a database of visual art in terms of a series of affect parameters that describe the emotional content of the artworks. We present ArtAffect’s three main interaction methods, each of which provides a different type of guided navigation through the dataset. Together, these three methods act as a playful exploration mechanic that presents art in unexpected ways, showing serendipitous connections between diverse artworks within the collection. These serendipitous connections can increase a user’s feelings of engagement and excitement.
-            <br><br>
-
-            Check out our code here: <a href="https://github.com/sarahmfrost/artaffect">github.com/sarahmfrost/artaffect</a>
-            <br><br>
-        </div>
-
-        <div class='method_info'>
-          <div id="slider-info">
-            Our Sliders interface encourages users to explore the database by manipulating five sliders that correspond to five affect qualities (love, positive emotion, anger, anxiety, sadness).
-            <br><br>
-            <img src="../static/imgs/about_page/sliders.png"/>
-            <br><br>
-          </div>
-
-          <div id="carousel-info">
-            The Carousel interface provides a tour through a subset of art pieces with the highest emotional valence along one affect vector.
-            <br><br>
-            <img src="../static/imgs/about_page/carousel.png"/>
-            <br><br>
-          </div>
-
-          <div id="gradient-info">
-            Our Gradient interface gives the user the ability to explore the affect space spanned by narrator-selected pieces of visual art.
-            <br><br>
-            <img src="../static/imgs/about_page/gradient.png"/>
-            <br><br>
-          </div>
-      <br><br>      <br><br>
-        </div>
      <script src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 

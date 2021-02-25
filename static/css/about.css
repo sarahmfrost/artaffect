@@ -11,7 +11,7 @@
 
 #slider-info, #carousel-info, #gradient-info {
   width: 33%;
-  font-size: 40px;
+  font-size: 35px;
   color: white;
   display: table-cell;
   border: 2px solid white;
@@ -29,7 +29,7 @@ img {
 
 h3 {
   font-family: Didot, "Didot LT STD";
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   padding-left: 30px;
   text-align: left;
@@ -40,9 +40,9 @@ font-family: 'MuseoModerno', cursive;
 color: #c9c0bb;
 /*font-size: 375px;*/
 font-size: 15vw;
-display: flex;
-  align-items: center;
-  justify-content: center;
+font-display: block;
+align-items: center;
+justify-content: center;
 text-align: center;
 /*width: 100%;
 height:auto;*/

@@ -21,18 +21,23 @@
   </head>
 
   <body>
-    <header>ArtAffect</header>
+    <header><a id="homeButton" href="/static/html/about.html">ArtAffect</a></header>
 
     <h2>
-      <a id="navLink" href="/">Home</a>
+      <a id="navLink" href="/static/html/space.html">Galaxy</a>
+
+      <a id="navLink" href="/static/html/gradient.html">Gradient</a>
       <a id="navLink" href="/static/html/sliders.html">Sliders</a>
+<<<<<<< HEAD
       <a id="navLink" href="/static/html/carousel.html">Carousel</a>
       <a id="navLink" href="/static/html/visual.html">Visual</a>
+=======
+>>>>>>> 67713a68cb92fa8dce47a0aefa9c2e67924900d1
     </h2>
 
     <div class="grid-container">
 <!--         First row begins  -->
-      <div id = "anchor1" class="grid-item" style = "border-bottom: 0">
+      <div id = "anchor1" class="grid-item">
         <div id ="anchor1but"></div>
       </div>
       <div class="grid-item">
@@ -46,78 +51,42 @@
 
         <div id = "targetImageName"></div>
       </div>
-      <div id = "anchor2" class="grid-item" style = "border-bottom: 0">
+      <div id = "anchor2" class="grid-item">
         <div id = "anchor2but"></div>
       </div>
-<!--         First row ends, second row begins  -->
-      <div id= "Affect1" class="grid-item" style = "border-top: 0; border-bottom: 0">
-          <!-- <button id="new_anchor_left">
-            <img src = "../imgs/refresh_white.png" height = "40">
-          </button>
-          <button id = "FLT_Left">
-            Feels More Like This
-          </button> -->
-      </div>
-      <div id = "grad_slider" class="grid-item">
+    </div>
+<!--         First row ends  -->
+
+      <div id = "grad_slider">
           <p style="color:white"> Explore the emotional space between two images:</p>
           <input id="sliderValue" type="range" min="0" max="60" value="30" step="10" class="slider">
           <br><br>
-          <button id="new_anchors">
-            <img src = "../imgs/refresh_white.png" height = "40"> Try again with new images
+<!--           <button id="new_anchors">
+            <img src = "../imgs/refresh_white.png" height = "40"> Try again with new random images
+          </button> -->
+            <button id="new_curated_anchors">
+            <img src = "../imgs/refresh_white.png" height = "40"> Try again with new curated images
           </button>
+          <br><br><br>
       </div>
-<!-- <<<<<<< HEAD
- -->  <!--       <div id = "spacer" class="grid-item"> </div>
-        <div id="mbutton2" class="grid-item">
-          <button> -->
-<!-- =======
- -->
-      <div id= "Affect2" class="grid-item" style = "border-top: 0; border-bottom: 0">
-        <!-- <button id="new_anchor_right">
-         <img src = "../imgs/refresh_white.png" height = "40">
-        </button>
-        <button id = "FLT_Right">
-          Feels More Like This
-        </button> -->
-      </div>
-<!--         Second row ends, third row begins  -->
 
 
 
-<!-- <<<<<<< HEAD
- -->        <!-- <div id="affect1" class="grid-item">
-          <h2>Affect vector:</h2>
-        </div>
-        <div id="affect2" class="grid-item">
-          <h2>Affect vector:</h2>
-        </div>
-        <div id="affect3" class="grid-item">
-          <h2>Affect vector:</h2>
-        </div> -->
-<!-- ======= -->
-      <div class="grid-item" style = "border-top: 0"></div>
-      <div id = "gradients" class="grid-item"></div>
-      <div class="grid-item" style = "border-top: 0"></div>
-<!-- >>>>>>> cd505ec54dd1c7917646f41b606f958891076277
- -->
-<!--         third row ends  -->
-    </div>
-
-    <div id="moreInfo">
+<!--     <div id="moreInfo">
       <div id="InfoText">
         <h2>
         how does this work? </br></br>
 
         This interaction method is a progression illustrating incremental movement between two anchor images. The page contains a result image between two anchor images arranged in a line, and controls for feels- more-like-this (accessed by moving the slider). Moving the slider increments or decrements a coefficient, which we use to interpolate between the affect vectors associated with the anchors. To explore the affective space that the two anchor images span, we index the resulting affect vector into the database and display the retrieved image at a position interpolated between the anchors. As a result, the physical position of the target image encodes the relative similarity of its affect to the affect of the two anchors.
         </h2></br></br>
-      </div>
-      <div id = "whyRepeats">
+      </div> -->
+<!--       <div id = "whyRepeats">
         <h2>
         why am I seeing repeated images? </br></br>
 
         If two anchor images have a similar emotional affect, there is less emotion space between the two images. This can lead to repeated images in the gradient. Please click "Try Again with New Images" to see the gradient between two new images in our database of 4000 images.
         </h2></br></br>
-      </div>
+      </div> -->
 
     </div>
 

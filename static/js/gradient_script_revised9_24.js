@@ -19,10 +19,10 @@ save file names to another array
 /*
 0. get filepaths for images from CSV
 */
-
+/*
 if (sessionStorage.getItem('value1') == null) {
     alert("Please increase size of your browser window for optimal experience");
-}
+}*/
 
 
 var csvFile = "../data/images.csv";
@@ -80,29 +80,112 @@ function LIWC_CSVToArray(path)
 var liwc_filePaths = LIWC_CSVToArray(liwc_csv);
 
 
-$(document).ready(function() {
+
+function getCuratedImages(){
+
+        curated_images = [['stormy-seashore-with-ruined-temple-shipwreck-and-figures-1747.jpg','the-lovers-1974.jpg'], ['john-philip-kemble-1757-1823-as-richard-in-richard-iii-by-william-shakespeare-1788.jpg','atocha-1964.jpg'],
+['the-shipwreck.jpg', 'the-kiss-1976.jpg'], ['m-quina-de-coser-electro-sexual-1934.jpg','quentin-metsys-madonna-col-bambino-1510-25-ca-01.JPG'], ['et-in-arcadia-ego-1622.jpg','eine-art-nebeneinander-1996.jpg'],
+['procession-in-toledo.jpg', 'christian-allegory-1515.jpg'], ['rape-of-tamar-1640.jpg', 'four-hearts-1969.jpg'], ['horse-frightened-by-a-storm-1824(1).jpg', 'in-bed-1893.jpg'],
+['orfeu-nos-infernos-1904.jpg', 'bassin-du-luxembourg-1930.jpg'], ["madonna-litta-madonna-and-the-child.jpg", 'samson-tearing-the-lion-s-mouth-1.jpg'],
+["a-winter-s-tale-act-iv-scene-3-the-shepherd-s-cot-1787.jpg","beggars-fighting-1634.jpg"], ["the-virgin-spanking-the-christ-child-before-three-witnesses-andre-breton-paul-eluard-and-the-1926.jpg","benjamin-and-eleanor-ridgley-laming-1788.jpg"],
+["psyche-showing-her-sisters-her-gifts-from-cupid-1753.jpg",'venus-punishing-profane-love-1595.jpg'], ["africa.jpg","the-battle-of-culloden-1746.jpg"],
+["hip-hip-hurrah-1888.jpg", 'hercules-fighting-with-the-lernaean-hydra-1634.jpg'], ["the-major-s-marriage-proposal-1851.jpg", 'the-family-1909.jpg']];
+
+
+        var randomNumber = Math.floor(Math.random() * curated_images.length);
+        curatedPair = curated_images[randomNumber];
+        console.log('curated pair is', curatedPair)
+
+        $('#anchor1but').empty();
+        $('#anchor2but').empty();
+
+
+        leftImg = curatedPair[0];
+        rightImg = curatedPair[1];
+
+        let x1 = document.createElement('img');
+        x1.src = '../imgs/images/' + leftImg;
+
+        let x2 = document.createElement('img');
+        x2.src = '../imgs/images/' + rightImg;
+
+
+        x1.setAttribute('id', 'anchor1img');
+        x2.setAttribute('id', 'anchor2img');
+
+
+        $('#anchor1but').prepend(x1);
+        $('#anchor2but').prepend(x2);
+
+
+        let left_image_title = leftImg.replace(/.jpg/g, "");
+        let left_image_title2 = left_image_title.replaceAll("-"," ");
+        $('#anchor1but').append("<br>" + left_image_title2);
+
+
+        for (i=0; i < liwc_filePaths.length; i++){
+            if (liwc_filePaths[i][0] == leftImg){
+                var affVec = liwc_filePaths[i].slice(1, 6);
+                var highest = Object.keys(affVec).reduce(function(a, b){ return affVec[a] > affVec[b] ? a : b });
+                if(highest == "0"){emo = "High Happiness"}
+                if(highest == "1"){emo = "High Anxiety"}
+                if(highest == "2"){emo = "High Anger"}
+                if(highest == "3"){emo = "High Sadness"}
+                if(highest == "4"){emo = "High Love"}
+                $('#anchor1but').prepend("Emotion: " + emo);
+
+            };
+        };
+
+
+        let right_image_title = rightImg.replace(/.jpg/g, "");
+        let right_image_title2 = right_image_title.replaceAll("-"," ");
+        $('#anchor2but').append("<br>" + right_image_title2);
+
+
+        for (i=0; i < liwc_filePaths.length; i++){
+            if (liwc_filePaths[i][0] == rightImg){
+                var affVec2 = liwc_filePaths[i].slice(1, 6);
+                var highest2 = Object.keys(affVec2).reduce(function(a, b){ return affVec2[a] > affVec2[b] ? a : b });
+                if(highest2 == "0"){emo2 = "High Happiness"}
+                if(highest2 == "1"){emo2 = "High Anxiety"}
+                if(highest2 == "2"){emo2 = "High Anger"}
+                if(highest2 == "3"){emo2 = "High Sadness"}
+                if(highest2 == "4"){emo2 = "High Love"}
+                $('#anchor2but').prepend("Emotion: " + emo2);
+                //$('#anchor2but').append("<br>" + affVec2);
+
+            };
+        };
+        console.log("affvec2", affVec2);
+        return [affVec, affVec2];
+    };
+
     /*
     1. Function to get two random anchor images
     */
-    function getBeginningImage(divID){
+function getBeginningImage(divID){
+        //$('#anchor1but').empty();
+        //$('#anchor2but').empty();
+
         filePaths = readCSVToArray(csvFile);
-        var randomNumber = Math.floor(Math.random() * filePaths.length);
+        let randomNumber = Math.floor(Math.random() * filePaths.length);
         randomImage = filePaths[randomNumber];
 
-        var butName = divID + 'but';
+        let butName = divID + 'but';
         $(butName).empty();
-        var x = document.createElement('img');
+        let x = document.createElement('img');
         x.src = '../imgs/images/' + randomImage;
 
-        var divName = divID.replace("#","");
+        let divName = divID.replace("#","");
         x.setAttribute('id', divName+ 'img');
 
         $(butName).prepend(x);
 
 
 
-        var image_title = randomImage.replace(/.jpg/g, "");
-        var image_title2 = image_title.replaceAll("-"," ");
+        let image_title = randomImage.replace(/.jpg/g, "");
+        let image_title2 = image_title.replaceAll("-"," ");
         $(butName).append("<br>" + image_title2);
 
 
@@ -111,24 +194,11 @@ $(document).ready(function() {
                 var affVec = liwc_filePaths[i].slice(1, 6);
             };
         };
+        $(butName).append(" <br> Affect vector: " + affVec);
         return affVec;
     };
 
-    var anchor1img_affVec = getBeginningImage('#anchor1');
-    var anchor2img_affVec = getBeginningImage('#anchor2');
-
-
-    //EDITED CODE TO DISPLAY 3 AFFECT VECTORS
-    //var target_affVec = getBeginningImage('#target');
-    //var anchor1img_affVec = getBeginningImage('#anchor1');
-    //var anchor2img_affVec = getBeginningImage('#anchor2');
-
-    $('#anchor1').append(" <br> Affect vector: " + anchor1img_affVec);
-    $('#anchor2').append(" <br> Affect vector: " + anchor2img_affVec);
-
-
-
-    /*
+        /*
     2. get all gradient blends between two anchor images and save to array
     */
 
@@ -142,8 +212,8 @@ $(document).ready(function() {
         // array of affects for one gradient blend
         gradient_blend = []
 
-        for(var i=0; i<weight.length; i++){
-            for (var k=0; k<7; k++){
+        for(let i=0; i<weight.length; i++){
+            for (let k=0; k<7; k++){
                 grad_piece = (weight[i] * anchor1img_affVec[k]) + (opp_weight[i] * anchor2img_affVec[k]);
                 grad_piece = grad_piece.toFixed(3);
                 gradient_blend.push(grad_piece);
@@ -155,9 +225,7 @@ $(document).ready(function() {
         return gradient_blends;
     }
 
-    gradient_blends = getGradientBlends(anchor1img_affVec, anchor2img_affVec)
-
-    /*
+/*
     3. run lookup function for all gradient blends, ensure there are no duplicates,
     save file names to another array
     */
@@ -166,19 +234,21 @@ $(document).ready(function() {
     pred_array = []
 
     function getGradientImages(gradient_blends){
-        for(var i=0; i<gradient_blends.length; i++){
-            var pred = {"positive": Number(gradient_blends[i][0]), "anxiety": Number(gradient_blends[i][1]), "anger": Number(gradient_blends[i][2]),
+        pred_array = [];
+        for(let i=0; i<gradient_blends.length; i++){
+            let pred = {"positive": Number(gradient_blends[i][0]), "anxiety": Number(gradient_blends[i][1]), "anger": Number(gradient_blends[i][2]),
             "sad": Number(gradient_blends[i][3]), "affiliation": Number(gradient_blends[i][4])}
             pred_array.push(pred);
-            pred = {}
+            pred = {};
         }
 
         image_values = []
 
-        var pred_array_string = JSON.stringify(pred_array);
+        let pred_array_string = JSON.stringify(pred_array);
+
         //$('#gradients').text("Gradient arrays are \n" +pred_array_string)
 
-        var promises = pred_array.map(getGradientImage)
+        let promises = pred_array.map(getGradientImage)
 
         return Promise.allSettled(promises)
             .then(
@@ -209,31 +279,33 @@ $(document).ready(function() {
       })
     }
 
-    getGradientImages(gradient_blends)
-    .then(result => {showImages(result)})
-
     /*
     4a. Build slider to show/hide gradient images
     */
 
     function showImages(image_array) {
-        //console.log(image_array);
-        for (var i=0; i<image_array.length; i++){
-            var res = image_array[i].split(";");
-            var data = res[0];
-            var emotion = res[1];
-            console.log("data is", data)
+        console.log(image_array);
+        $('#target0, #target1, #target2, #target3, #target4, #target5, #target6').empty();
+        console.log(image_array);
 
-            var img = document.createElement("img");
-            img.width = "270";
+        for (let i=0; i<image_array.length; i++){  //change to the last 7 items
+            console.log(image_array.length);
+            let res = image_array[i].split(";");
+            let data = res[0];
+            let emotion = res[1];
+            //console.log("data is", data);
+
+            let img = document.createElement("img");
+            img.width = "200";
             img.src = "/static/imgs/images/" + data;
+            //console.log(img.src);
 
-            var image_title = data.replace(/.jpg/g, "");
-            var image_title2 = image_title.replaceAll("-"," ");
+            let image_title = data.replace(/.jpg/g, "");
+            let image_title2 = image_title.replaceAll("-"," ");
 
-
+            //+ "<br>" + emotion
             $('#target' + i + "").append(img).css("visibility", "hidden");
-            $('#target' + i + "").append("<br>" + image_title2 + "<br>" + emotion).css("visibility", "hidden");
+            $('#target' + i + "").append("<br>" + image_title2).css("visibility", "hidden");
 
 
         }
@@ -244,7 +316,7 @@ $(document).ready(function() {
 
     $( '#sliderValue' ).mouseup(function(){
         $('#target0, #target1, #target2, #target3, #target4, #target5, #target6').css("visibility", "hidden");
-        var slider = document.getElementById("sliderValue");
+        let slider = document.getElementById("sliderValue");
 
         if (slider.value == 0){
             $("#target0").css("visibility", "visible");
@@ -260,13 +332,53 @@ $(document).ready(function() {
 
     })
 
+
+$(document).ready(function() {
+
+    let names = getCuratedImages();
+
+    let twoanchor1img_affVec = names[0], twoanchor2img_affVec = names[1];
+
+
+    gradient_blends = getGradientBlends(twoanchor1img_affVec, twoanchor2img_affVec);
+
+
+    getGradientImages(gradient_blends)
+    .then(result => {showImages(result)})
+
     /*
-    4b. set up "refresh anchors" button
+    4b. set up "refresh random anchors" and "curated anchors" buttons
     */
 
     $('#new_anchors').click(function(){
-        sessionStorage.setItem("value1", "1");
-        location.reload();
+
+
+/*        sessionStorage.setItem("value1", "1");*/
+        let anchor1img_affVec = getBeginningImage('#anchor1');
+        let anchor2img_affVec = getBeginningImage('#anchor2');
+
+        gradient_blends = getGradientBlends(anchor1img_affVec, anchor2img_affVec);
+
+        getGradientImages(gradient_blends)
+        .then(result => {showImages(result)})
+    });
+
+    $('#new_curated_anchors').click(function(){
+
+        let slider = document.getElementById("sliderValue");
+        slider.value = 30;
+
+        let names = getCuratedImages();
+
+        let twoanchor1img_affVec = names[0], twoanchor2img_affVec = names[1];
+
+
+        gradient_blends = getGradientBlends(twoanchor1img_affVec, twoanchor2img_affVec);
+
+
+        getGradientImages(gradient_blends)
+        .then(result => {showImages(result)})
+
     });
 
 })

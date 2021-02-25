@@ -1,5 +1,5 @@
 body {
-    background-color: #000000;
+    background-color: #000112;
     font-size: 20px;
 }
 
@@ -24,6 +24,17 @@ h2 {
   font-family: Didot, "Didot LT STD";
   font-size: 40px;
   color: white;
+}
+
+#homeButton {
+  text-align: center;
+  font-family: Didot, "Didot LT STD";
+  font-size: 55px;
+  color: white;
+}
+
+#homeButton:hover {
+  font-style: underline;
 }
 
 
