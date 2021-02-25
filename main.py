@@ -9,8 +9,8 @@ import pandas as pd
 
 import os
 
-from keras.models import load_model
-from keras import backend as K
+#from keras.models import load_model
+#from keras import backend as K
 
 from random import randint
 
@@ -95,7 +95,7 @@ def TouchToArt():
     #chosen_js_list = json.dumps(np.arange(features[chosen_index]))
     print("chosen js list is", chosen_js_list) # now it's a string
 
-    K.clear_session()
+    #K.clear_session()
     print('Result and the chosen_index C:',liwc_csv.iloc[chosen_index]['C'])
     print('Result and the chosen_index:B ',liwc_csv.iloc[chosen_index]['B'])
     return jsonify(liwc_csv.iloc[chosen_index]['B'] + ";" + chosen_js_list)
@@ -126,7 +126,7 @@ def GradientArt():
     #chosen_js_list = json.dumps(np.arange(features[chosen_index]))
     print("chosen js list is", chosen_js_list) # now it's a string
 
-    K.clear_session()
+    #K.clear_session()
     print('Result and the chosen_index C:',liwc_csv.iloc[chosen_index]['C'])
     print('Result and the chosen_index:B ',liwc_csv.iloc[chosen_index]['B'])
     return jsonify(liwc_csv.iloc[chosen_index]['B'] + ";" + chosen_js_list)

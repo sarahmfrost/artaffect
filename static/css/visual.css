@@ -1,0 +1,19 @@
+
+.xaxis{
+    top: 100 px;
+    right: 100 px;
+    font-size: 1000 px;
+    color: white;
+}
+
+.btn-group button{
+    background-color: black;
+    border: white;
+    color: white;
+    cursor: pointer;
+    width: 50%;
+}
+
+.btn-group button:hover{
+    background-color: gray;
+}

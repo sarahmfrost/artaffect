@@ -1,6 +1,4 @@
-<!-- carousel.html
-
-https://codepen.io/swetankrathi/pen/OyRZxL
+<!-- visual.html
 -->
 
 <!DOCTYPE html>
@@ -31,13 +29,15 @@ https://codepen.io/swetankrathi/pen/OyRZxL
 
 
     <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/carousel.css" rel="stylesheet">
+    <link href="../css/visual.css" rel="stylesheet">
 
 
     <link rel="shortcut icon" type="image/png" href="/static/imgs/palette.png"/>
 
 
-    <script src="../js/carousel_functions.js" defer></script>
+    <script src="../js/visual_functions.js" defer></script>
+
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"  crossorigin="anonymous"></script>
 
@@ -55,40 +55,49 @@ https://codepen.io/swetankrathi/pen/OyRZxL
     </h2>
 
 
-    <div class="wrapper">
-    <br><br>
-      <h2>Anger</h2>
-      <div class="carousel"></div>
+    <div id='real_graph' style="width:900px;height:900px;"></div>
 
-      <br><br>
-      <h2>Positive Emotion</h2>
-        <!-- <div class="dropdown">
-            <button>?</button>
-            <div class="dropdownContent">
-            <p> Originally called Posemo </p>
-            </div>
-            </div> -->
-      <div class="carousel"></div>
+    <h2>
+        <a id="navLink" href="/static/html/space.html">3D Space</a>
+    </h2>
 
-      <br><br>
-      <h2>Anxiety</h2>
-      <div class="carousel"></div>
-
-      <br><br>
-      <h2>Sadness</h2>
-      <div class="carousel"></div>
-      <br><br>
-      <h2>Love</h2>
-      <!-- <div class="dropdown">
-          <button>?</button>
-          <div class="dropdownContent">
-          <p> Originally called affiliation.</p>
-          </div>
-          </div> -->
-
-      <div class="carousel"></div>
-      <br><br><br><br>
-
+    <div class='xaxis'>
+        <p>X AXIS</p>
     </div>
+
+    <div class='btn-group'>
+        <button>Positivity</button>
+        <button>Anxiety</button>
+        <button>Anger</button>
+        <button>Sadness</button>
+        <button>Affiliation</button>
+    </div>
+    <br><br>
+
+    <div class='xaxis'>
+        <p>Y AXIS</p>
+    </div>
+
+    <div class='btn-group'>
+        <button>Positivity</button>
+        <button>Anxiety</button>
+        <button>Anger</button>
+        <button>Sadness</button>
+        <button>Affiliation</button>
+    </div>
+    <br><br>
+
+    <div class='xaxis'>
+        <p>Z AXIS</p>
+    </div>
+
+    <div class='btn-group'>
+        <button>Positivity</button>
+        <button>Anxiety</button>
+        <button>Anger</button>
+        <button>Sadness</button>
+        <button>Affiliation</button>
+    </div>
+    
   </body>
 </html>

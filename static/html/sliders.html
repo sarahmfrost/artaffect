@@ -22,9 +22,12 @@
 
     <script src="../js/sliders_functions.js" defer></script>
 
+    <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+    -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
 
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
    </head>
 
 
@@ -36,6 +39,7 @@
             <a id="navLink" href="/">Home</a>
             <a id="navLink" href="/static/html/carousel.html">Carousel</a>
             <a id="navLink" href="/static/html/gradient.html">Gradient</a>
+            <a id="navLink" href="/static/html/visual.html">Visual</a>
         </h2>
 
 
@@ -95,6 +99,12 @@ Your ArtAffect:
   <input id="affiliationValue" type="range" min="0" max="51" value="0" class="slider">
   </div>
 
+</div>
+
+<div id ="container">
+  <canvas id="myChart" width=900 height=900>
+
+  </canvas>
 </div>
 
 

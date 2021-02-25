@@ -157,31 +157,34 @@ a {
 }
 #vertical {
   transform: rotate(270deg);
+  margin-top: 300px;
 }
 
 #upright {
   transform: rotate(315deg);
-  margin-left: 340px;
-
+  margin-left: 360px;
+  margin-top: 80px;
 }
 
 #downright {
   transform: rotate(50deg);
-  margin-left: 340px;
+  margin-left: 360px;
   margin-top: 240px;
 
 }
 #downleft {
   transform: rotate(130deg);
-  margin-right: 340px;
+  margin-right: 270px;
   margin-bottom: 50px;
-
+  margin-top: -60px;
 }
 #upleft {
   transform: rotate(220deg);
   margin-right: 340px;
-  margin-top: -495px;
+  margin-top: -490px;
 }
+
+
 
 
 
