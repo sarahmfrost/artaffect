@@ -1,4 +1,3 @@
-
 csvPath = "../data/image_path.csv"
 vectorPath = "../data/liwc_toParse.csv"
 //var allFilePaths = []

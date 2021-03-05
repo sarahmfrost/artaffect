@@ -1,14 +1,9 @@
 /* Process Order:
-
 1. Get csv with image names and affect values
-
 2. User inputs 3 emotions to cross-reference 
     (for now we'll start with Anger, Anxiety, and Sadness)
-
 3. Read the 3 emotions into an array
-
 4. Plot 3D graph
-
 */
 
 
@@ -57,4 +52,3 @@ var layout = {
 };
 Plotly.newPlot(real, data, layout);
 });
-

@@ -1,201 +1,213 @@
 body {
-    background-color: #000112;
-    font-size: 20px;
+  background-color: #000112;
+  font-size: 20px;
 }
 
 
 header {
-    text-align: center;
-    font-family: Didot, "Didot LT STD";
-    font-size: 55px;
-    color: white;
-    padding: 7px;
-    border: 2px solid white;
-    border-radius: 6px;
-    width: 330px;
-    margin: auto;
-    margin-top: 20px;
+  text-align: center;
+  font-family: Didot, "Didot LT STD";
+  font-size: 55px;
+  color: white;
+  padding: 7px;
+  border: 2px solid white;
+  border-radius: 6px;
+  width: 330px;
+  margin: auto;
+  margin-top: 20px;
 
 
 }
 
 h2 {
-  text-align: center;
-  font-family: Didot, "Didot LT STD";
-  font-size: 40px;
-  color: white;
+text-align: center;
+font-family: Didot, "Didot LT STD";
+font-size: 40px;
+color: white;
 }
 
 #homeButton {
-  text-align: center;
-  font-family: Didot, "Didot LT STD";
-  font-size: 55px;
-  color: white;
+text-align: center;
+font-family: Didot, "Didot LT STD";
+font-size: 55px;
+color: white;
 }
 
 #homeButton:hover {
-  font-style: underline;
+font-style: underline;
 }
 
 
 #navLink {
+font-family: Didot, "Didot LT STD";
+color:white;
+font-size: 40px;
+width: 140px;
+text-align: center;
+float: right;
+margin-right: 80px;
+margin-left: 50px;
+}
+
+#navLink:hover {
+color: white;
+}
+
+#navLinkLeft {
   font-family: Didot, "Didot LT STD";
   color:white;
   font-size: 40px;
   width: 140px;
   text-align: center;
-  float: right;
+  float: left;
   margin-right: 80px;
   margin-left: 50px;
-}
-
-#navLink:hover {
+  }
+  
+#navLinkLeft:hover {
   color: white;
-}
+  }
 
 
 #artFeatures, #sliderValues, #PaintingName {
-  text-align: center;
+text-align: center;
 }
 
 
 .container {
-    padding-top: 30px;
-    margin: auto;
-    padding-bottom: 20px;
+  padding-top: 30px;
+  margin: auto;
+  padding-bottom: 20px;
 
 }
 
 #parent_div {
-  display: table;
-  width: 100%;
-  height: 700px;
-  border-spacing: 0;
-  border-spacing: none;
+display: table;
+width: 100%;
+height: 700px;
+border-spacing: 0;
+border-spacing: none;
 }
 
 
 #about-text {
-    float:right;
-    font-family: Didot, "Didot LT STD";
-    color: white;
-    font-size: 50px;
-    padding-right: 200px;
-    padding-left: 200px;
+  float:right;
+  font-family: Didot, "Didot LT STD";
+  color: white;
+  font-size: 50px;
+  padding-right: 200px;
+  padding-left: 200px;
 }
 
 #input-text {
-    float:left;
-    font-family: Didot, "Didot LT STD";
-    color: white;
-    font-size: 35px;
-    padding-bottom: 100px;
+  float:left;
+  font-family: Didot, "Didot LT STD";
+  color: white;
+  font-size: 35px;
+  padding-bottom: 100px;
 }
 
 a {
-  color: #ffffff;
+color: #ffffff;
 }
 
 #resultDivText {
-    float:right;
-    font-family: Didot, "Didot LT STD";
-    color: white;
-    font-size: 35px;
-    width: 500px;
-    height: 100px;
-    padding-right: 50px;
+  float:right;
+  font-family: Didot, "Didot LT STD";
+  color: white;
+  font-size: 35px;
+  width: 500px;
+  height: 100px;
+  padding-right: 50px;
 }
 
 
 #resultDiv {
-    width: 35%;
-    display: table-cell;
+  width: 35%;
+  display: table-cell;
 
 }
 
 #breakup {
-    width: 10%;
-    display: table-cell;
+  width: 10%;
+  display: table-cell;
 }
 
 /* slider info */
 .slidecontainer {
-  padding: 0;
-  width: 35%;
-  display: table-cell;
-  vertical-align: middle;
- /* width: 280px;*/
- /* border: 3px solid white; */
-  border-radius: 6px;
-  text-align: center;
-  margin-bottom: 200px;
+padding: 0;
+width: 35%;
+display: table-cell;
+vertical-align: middle;
+/* width: 280px;*/
+/* border: 3px solid white; */
+border-radius: 6px;
+text-align: center;
+margin-bottom: 200px;
 }
 
 /* The slider itself */
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
-  appearance: none;
-  width: 60%; /* Full-width */
-  height: 15px; /* Specified height */
-  background: #d3d3d3; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
-  margin-bottom: 30px
+-webkit-appearance: none;  /* Override default CSS styles */
+appearance: none;
+width: 60%; /* Full-width */
+height: 15px; /* Specified height */
+background: #d3d3d3; /* Grey background */
+outline: none; /* Remove outline */
+opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+transition: opacity .2s;
+margin-bottom: 30px
 }
 
 /* Mouse-over effects */
 .slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+opacity: 1; /* Fully shown on mouse-over */
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #FACADE; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+-webkit-appearance: none; /* Override default look */
+appearance: none;
+width: 25px; /* Set a specific slider handle width */
+height: 25px; /* Slider handle height */
+background: #FACADE; /* Green background */
+cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #FACADE; /* Pink background */
-  cursor: pointer; /* Cursor on hover */
+width: 25px; /* Set a specific slider handle width */
+height: 25px; /* Slider handle height */
+background: #FACADE; /* Pink background */
+cursor: pointer; /* Cursor on hover */
 }
 #vertical {
-  transform: rotate(270deg);
-  margin-top: 300px;
+transform: rotate(270deg);
 }
 
 #upright {
-  transform: rotate(315deg);
-  margin-left: 360px;
-  margin-top: 80px;
+transform: rotate(315deg);
+margin-left: 340px;
+
 }
 
 #downright {
-  transform: rotate(50deg);
-  margin-left: 360px;
-  margin-top: 240px;
+transform: rotate(50deg);
+margin-left: 340px;
+margin-top: 240px;
 
 }
 #downleft {
-  transform: rotate(130deg);
-  margin-right: 270px;
-  margin-bottom: 50px;
-  margin-top: -60px;
+transform: rotate(130deg);
+margin-right: 340px;
+margin-bottom: 50px;
+
 }
 #upleft {
-  transform: rotate(220deg);
-  margin-right: 340px;
-  margin-top: -490px;
+transform: rotate(220deg);
+margin-right: 340px;
+margin-top: -495px;
 }
-
-
 
 
 

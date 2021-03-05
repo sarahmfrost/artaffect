@@ -1,9 +1,6 @@
 //const csvPath = "static/data/image_path.csv"
 //var allFilePaths = []
 
-
-var affect = [];
-
 function readCSVToArray(path, delimter)
 {
     var filePaths = []
@@ -61,10 +58,6 @@ var pred = {"positive": Number(positiveEmotion.value),
   "sad": Number(sad.value),
   "affiliation": Number(affiliation.value)}
 
-affect = [Number(positiveEmotion.value), Number(anxiety.value), 
-    Number(anger.value), Number(sad.value), Number(affiliation.value)]
-
-console.log("affect is " + affect)
 console.log("pred is", pred)
 return pred
 }
@@ -110,28 +103,3 @@ $(document).ready(function()
         })
     })
 })
-
-
-var options = {
-    scale: {
-        ticks: {
-            beginAtZero: true,
-            max: 100,
-            min: 0
-        }
-    },
-};
-
-var myRadarChart = new Chart("myChart", {
-    type: 'radar',
-    data: {
-        labels: ["Pos Emo", "Anxiety", "Anger", "Sadness", "Affiliation"],
-        datasets: [{
-            label: "Affects as radar chart",
-            backgroundColor: 'rgba(0, 200, 132, 0.1)',
-            borderColor: 'rgba(0, 200, 132)',
-            data: [20, 30, 40, 50, 60]
-        }],
-    },
-    options: options
-});

@@ -1,18 +1,12 @@
-
 /*
 Process order:
 0. get filepaths for images from CSV
 1. Function to get two random anchor images and print affect vectors for anchor images
-
 2. get all gradient blends between two anchor images and save to array
-
 3. run lookup function for all gradient blends, ensure there are no duplicates,
 save file names to another array
-
 4a. Build slider to show/hide gradient images
 4b. set up "refresh anchors" button
-
-
 */
 
 
@@ -382,4 +376,3 @@ $(document).ready(function() {
     });
 
 })
-

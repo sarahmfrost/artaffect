@@ -1,4 +1,3 @@
-
 var csvFile = "../data/images.csv";
 
 var liwc_csv = "../data/liwc_toParse.csv";
@@ -99,7 +98,6 @@ $(document).ready(function() {
                 };
             };
         }
-        $(divID).append(affVec);
         return affVec;
     };
 
@@ -138,10 +136,8 @@ $(document).ready(function() {
 
 /*
 For C0, C1 either the affect vector or the position vector of the anchor images
-
 where a is [.1,.2,.3,.4,.5,.6,.7,.8,.9]
 C = (1-a)C0 + (a)C1
-
 C1 = right
 C0 = left
 */
@@ -152,7 +148,7 @@ C0 = left
         var c1 = anchor2img_affVec;
 
         var c0_num = [];
-        var c1_num = [];                                     
+        var c1_num = [];
 
         var c0plusc1 = [];
 
@@ -303,20 +299,15 @@ var a=.5;
 
 
 /*From gradient_revised:
-
 $('#FLT_Left').click(function(){
         console.log("left Feels more like this clicked")
         });
-
 $('#FLT_Right').click(function(){
         console.log("Right feels more like this clicked")
         });
-
-
 $('#new_anchor_left').click(function(){
             getBeginningImage('#anchor1');
         });
-
 $('#new_anchor_right').click(function(){
             getBeginningImage('#anchor2');
         });

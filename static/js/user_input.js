@@ -10,8 +10,6 @@
         }
     })
 }
-
-
 getFileName();*/
 
 
@@ -24,5 +22,3 @@ function getNewFile(){
 
 
 getNewFile();
-
-
