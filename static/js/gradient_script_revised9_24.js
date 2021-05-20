@@ -59,7 +59,7 @@ function LIWC_CSVToArray(path)
         contentType: false,
         processData: false,
         success: function(artCollection) {
-            var rows = artCollection.split("\r");
+            var rows = artCollection.split("\n");
             for (var i = 0; i < rows.length; i++) {
                 var cells = rows[i].split(",");
                 data.push( cells );
@@ -72,6 +72,8 @@ function LIWC_CSVToArray(path)
 }
 
 var liwc_filePaths = LIWC_CSVToArray(liwc_csv);
+console.log('got here ')
+console.log(liwc_filePaths)
 
 
 
@@ -118,6 +120,7 @@ function getCuratedImages(){
 
 
         for (i=0; i < liwc_filePaths.length; i++){
+            console.log(liwc_filePaths[i])
             if (liwc_filePaths[i][0] == leftImg){
                 var affVec = liwc_filePaths[i].slice(1, 6);
                 var highest = Object.keys(affVec).reduce(function(a, b){ return affVec[a] > affVec[b] ? a : b });
